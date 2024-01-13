@@ -1,0 +1,9 @@
+{
+  "description": "Tests EasyPost to validate that addresses can be retrieved in the test and prod environments and that addresses can be verified in the prod environment.",
+  "logical_name": "easypost",
+  "name": "EasyPost",
+  "groups": [
+    "api"
+  ],
+  "status_page_url": "https://easypost.statuspage.io/"
+}

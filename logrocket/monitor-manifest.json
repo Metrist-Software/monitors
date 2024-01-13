@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for LogRocket.",
+  "logical_name": "logrocket",
+  "name": "LogRocket",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.logrocket.com/"
+}

@@ -1,0 +1,12 @@
+{
+  "optionalProperties": {
+    "description": { "type": "string" },
+    "homepage": { "type": "string" },
+    "groups": { "elements": { "type": "string" } },
+    "status_page_url": { "type": "string" }
+  },
+  "properties": {
+    "logical_name": { "type": "string" },
+    "name": { "type": "string" }
+  }
+}

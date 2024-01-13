@@ -1,0 +1,60 @@
+{
+  "description": "Monitor the observability of [Asana's API](https://developers.asana.com/docs).",
+  "has_cleanup_tasks": false,
+  "logical_name": "asana",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step pings Asana's users REST API.",
+      "logical_name": "Ping",
+      "name": "Ping",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developers.asana.com/docs/get-multiple-users"
+    },
+    {
+      "description": "This step creates a task using Asana's REST API.",
+      "logical_name": "CreateTask",
+      "name": "Create Task",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developers.asana.com/docs/create-a-task"
+    },
+    {
+      "description": "This step retrieves a task using Asana's REST API.",
+      "logical_name": "GetTask",
+      "name": "Get Task",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developers.asana.com/docs/get-a-task"
+    },
+    {
+      "description": "This step deletes a task using Asana's REST API.",
+      "logical_name": "DeleteTask",
+      "name": "Delete Task",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developers.asana.com/docs/delete-a-task"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "asana",
+  "config_values": [
+    {
+      "description": "The ID of the project to use.",
+      "required": true,
+      "name": "ProjectId",
+      "environment_variable_name": "METRIST_ASANA_PROJECT_ID"
+    },
+    {
+      "description": "The ID of the workspace to use.",
+      "required": true,
+      "name": "WorkspaceId",
+      "environment_variable_name": "METRIST_ASANA_WORKSPACE_ID"
+    },
+    {
+      "description": "The personal access token to use.",
+      "required": true,
+      "name": "PersonalAccessToken",
+      "environment_variable_name": "METRIST_ASANA_PERSONAL_ACCESS_TOKEN"
+    }
+  ]
+}

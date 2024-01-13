@@ -1,0 +1,30 @@
+{
+  "name": "sentry",
+  "description": "Sentry",
+  "tag": "saas",
+  "run_spec": {
+    "type": "dll"
+  },
+  "interval_secs": 300,
+  "steps": [
+    {
+      "name": "CaptureEvent"
+    },
+    {
+      "name": "WaitForIssue"
+    },
+    {
+      "name": "ResolveIssue"
+    },
+    {
+      "name": "DeleteIssue"
+    }
+  ],
+  "extra_config": {
+    "ApiToken": "@env@:@secret@:/${ENVIRONMENT_TAG}/monitors/sentry/${ORCHESTRATOR_REGION}/secrets#apitoken",
+    "IngestUrl": "@env@:@secret@:/${ENVIRONMENT_TAG}/monitors/sentry/${ORCHESTRATOR_REGION}/secrets#ingesturl",
+    "OrganizationSlug": "canary-monitoring-inc",
+    "ProjectSlug": "@env@:${ENVIRONMENT_TAG}-${ORCHESTRATOR_REGION}",
+    "Region": "@env@:${ORCHESTRATOR_REGION}"
+  }
+}

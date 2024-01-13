@@ -1,0 +1,46 @@
+{
+  "description": "Monitor Neon's API",
+  "has_cleanup_tasks": false,
+  "logical_name": "neon",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "Create a new branch",
+      "logical_name": "CreateBranch",
+      "name": "CreateBranch",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://api-docs.neon.tech/reference/createprojectbranch"
+    },
+    {
+      "description": "Delete a branch",
+      "logical_name": "DeleteBranch",
+      "name": "DeleteBranch",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://api-docs.neon.tech/reference/deleteprojectbranch"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "neon",
+  "config_values": [
+    {
+      "description": "API key",
+      "required": true,
+      "name": "ApiKey",
+      "environment_variable_name": "METRIST_NEON_API_KEY"
+    },
+    {
+      "description": "The Project Id to create and delete the branches on",
+      "required": true,
+      "name": "ProjectId",
+      "environment_variable_name": "METRIST_NEON_PROJECT_ID"
+    },
+    {
+      "description": "The base branch from which to create the new branch",
+      "required": true,
+      "name": "BaseBranchId",
+      "environment_variable_name": "METRIST_NEON_BASE_BRANCH_ID"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "description": "Tests Google Compute Engine to validate that instances can be created, described, and deleted.",
+  "has_cleanup_tasks": false,
+  "logical_name": "gcpcomputeengine",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "Creates an instance.",
+      "logical_name": "CreateInstance",
+      "name": "Create Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets information about the instance.",
+      "logical_name": "GetInstanceInfo",
+      "name": "Get Instance Info",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Deletes the instance.",
+      "logical_name": "DeleteInstance",
+      "name": "Delete Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "gcpcomputeengine",
+  "config_values": [
+    {
+      "description": "The base 64 encoded credentials string to use for Cloud Storage operations.",
+      "required": true,
+      "name": "PrivateKey",
+      "environment_variable_name": "METRIST_GCPCOMPUTEENGINE_PRIVATE_KEY"
+    },
+    {
+      "description": "The GCP project ID to use for GCP compute engine operations.",
+      "required": true,
+      "name": "ProjectId",
+      "environment_variable_name": "METRIST_GCPCOMPUTEENGINE_PROJECT_ID"
+    },
+    {
+      "description": "An environment tag to use for deployed elements.",
+      "required": true,
+      "name": "EnvironmentTag",
+      "environment_variable_name": "METRIST_GCPAPPENGINE_ENVIRONMENT_TAG"
+    },
+    {
+      "description": "Any valid GCP region.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_GCPAPPENGINE_REGION"
+    }
+  ]
+}

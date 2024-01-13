@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the functionality of New Relic's web UI.",
+  "logical_name": "newrelic",
+  "name": "New Relic",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://newrelic.statuspage.io/"
+}

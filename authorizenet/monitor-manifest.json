@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Authorize.net.",
+  "logical_name": "authorizenet",
+  "name": "Authorize.net",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.authorize.net/"
+}

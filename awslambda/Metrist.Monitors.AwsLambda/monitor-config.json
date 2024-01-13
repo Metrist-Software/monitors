@@ -1,0 +1,20 @@
+{
+  "name": "awslambda",
+  "description": "AWS Lambda",
+  "tag": "aws",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "TriggerLambdaAndWaitForResponse"
+    }
+  ],
+  "extra_config": {
+    "Region":"@env@:${ORCHESTRATOR_REGION}",
+    "AwsAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awslambda/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+		"AwsSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awslambda/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "TestFunctionArn": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awslambda/${ORCHESTRATOR_REGION}/secrets#test_function_arn",
+		"QueueUrl": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awslambda/${ORCHESTRATOR_REGION}/secrets#queue_url"
+  }
+}

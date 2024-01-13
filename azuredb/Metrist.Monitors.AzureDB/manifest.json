@@ -1,0 +1,100 @@
+{
+  "description": "Monitor the observability of [Azure Cosmos Managed Databases](https://azure.microsoft.com/solutions/databases/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "azuredb",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to create a cosmos account, randomly named, in the given region.",
+      "logical_name": "CreateCosmosAccount",
+      "name": "Create Cosmos Account",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to attach a database, randonmy named, to the cosmos account created in a previous step.",
+      "logical_name": "CreateDatabase",
+      "name": "Create Database",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to create a new SqlContainer in a database created in a previous step.",
+      "logical_name": "CreateContainer",
+      "name": "Create Container",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to insert an item in a container created in a previous step.",
+      "logical_name": "InsertItem",
+      "name": "Insert Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve an item created in a previous step.",
+      "logical_name": "GetItem",
+      "name": "Get Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete an item created in a previous step.",
+      "logical_name": "DeleteItem",
+      "name": "Delete Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete a container created in a previous step.",
+      "logical_name": "DeleteContainer",
+      "name": "Delete Container",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete a database created in a previous step.",
+      "logical_name": "DeleteDatabase",
+      "name": "Delete Database",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azuredb",
+  "config_values": [
+    {
+      "description": "The client ID is the unique Application (client) ID assigned to your app by Azure AD when the app was registered.",
+      "required": true,
+      "name": "ClientID",
+      "environment_variable_name": "METRIST_AZUREDB_CLIENT_I_D"
+    },
+    {
+      "description": "Secret string previously shared with AAD at application registration to prove the identity of the application (the client) requesting the tokens.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_AZUREDB_CLIENT_SECRET"
+    },
+    {
+      "description": "The name of an Azure Region.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AZUREDB_REGION"
+    },
+    {
+      "description": "A GUID that identifies a subscription and underlying services.",
+      "required": true,
+      "name": "SubscriptionID",
+      "environment_variable_name": "METRIST_AZUREDB_SUBSCRIPTION_I_D"
+    },
+    {
+      "description": "A unique identifier of the Active Directory instance.",
+      "required": true,
+      "name": "TenantID",
+      "environment_variable_name": "METRIST_AZUREDB_TENANT_I_D"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "description": "Monitor the observability of [AWS Identity and Access Management service](https://aws.amazon.com/iam/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "awsiam",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to create a user, randomly named.",
+      "logical_name": "CreateUser",
+      "name": "Create User",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to create a group, randomly named.",
+      "logical_name": "CreateGroup",
+      "name": "Create Group",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to add the newly created user to the newly created group.",
+      "logical_name": "AddUserToGroup",
+      "name": "Add User To Group",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to remove the user from the group.",
+      "logical_name": "RemoveUserFromGroup",
+      "name": "Remove User From Group",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete the group.",
+      "logical_name": "DeleteGroup",
+      "name": "Delete Group",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to attach the user to the given policy arn.",
+      "logical_name": "AttachPolicy",
+      "name": "Attach Policy",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to detach the user from the given policy arn.",
+      "logical_name": "DetachPolicy",
+      "name": "Detach Policy",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete the user created in an earlier step.",
+      "logical_name": "DeleteUser",
+      "name": "Delete User",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awsiam",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AWSAccessKeyId",
+      "environment_variable_name": "METRIST_AWSIAM_A_W_S_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "required": true,
+      "name": "AWSRegion",
+      "environment_variable_name": "METRIST_AWSIAM_A_W_S_REGION"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AWSSecretAccessKey",
+      "environment_variable_name": "METRIST_AWSIAM_A_W_S_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "A name used to retrieve a policy arn, as in `arn:aws:iam::123456789000:policy/AwsIamMonitorTestPolicies/${THIS_NAME}-a_region-awsiam-testpolicy`.",
+      "required": true,
+      "name": "Namespace",
+      "environment_variable_name": "METRIST_AWSIAM_NAMESPACE"
+    }
+  ]
+}

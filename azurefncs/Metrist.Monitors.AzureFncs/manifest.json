@@ -1,0 +1,33 @@
+{
+  "description": "Monitor the observability of [Azure Functions service](https://azure.microsoft.com/products/functions/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "azurefncs",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step triggers a GET request to the given url and appends `?code={the_given_value}`.",
+      "logical_name": "RunHttpTrigger",
+      "name": "RunHttpTrigger",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azurefncs",
+  "config_values": [
+    {
+      "description": "A code (any value) to which your function will respond.",
+      "required": true,
+      "name": "TestFunctionCode",
+      "environment_variable_name": "METRIST_AZUREFNCS_TEST_FUNCTION_CODE"
+    },
+    {
+      "description": "The url of an existing Azure Function endpoint. The function must be written to expect, and respond to, the given code.",
+      "required": true,
+      "name": "TestFunctionUrl",
+      "environment_variable_name": "METRIST_AZUREFNCS_TEST_FUNCTION_URL"
+    }
+  ]
+}

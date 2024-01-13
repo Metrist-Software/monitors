@@ -1,0 +1,53 @@
+{
+  "description": "Monitor the observability of [AWS Secrets Manager](https://aws.amazon.com/secretsmanager/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "awssecretsmanager",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "logical_name": "CreateSecret",
+      "name": "Create Secret",
+      "description": "Create a secret.",
+      "default_timeout_seconds": 60,
+      "docs_url": "https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html"
+    },
+    {
+      "logical_name": "GetSecretValue",
+      "name": "Get Secret Value",
+      "description": "Retrieve the value of the secret just created.",
+      "default_timeout_seconds": 60,
+      "docs_url": "https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html"
+    },
+    {
+      "logical_name": "DeleteSecret",
+      "name": "Delete Secret",
+      "description": "Delete the secret.",
+      "default_timeout_seconds": 60,
+      "docs_url": "https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awssecretsmanager",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_AWSSECRETSMANAGER_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_AWSSECRETSMANAGER_AWS_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AWSSECRETSMANAGER_REGION"
+    }
+  ]
+}

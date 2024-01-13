@@ -1,0 +1,27 @@
+{
+  "name": "asana",
+  "description": "Asana",
+  "tag": "aws",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "Ping"
+    },
+    {
+      "name": "CreateTask"
+    },
+    {
+      "name": "GetTask"
+    },
+    {
+      "name": "DeleteTask"
+    }
+  ],
+  "extra_config": {
+    "PersonalAccessToken": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/asana/secrets#personal_access_token",
+    "ProjectId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/asana/secrets#project_id",
+    "WorkspaceId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/asana/secrets#workspace_id"
+  }
+}

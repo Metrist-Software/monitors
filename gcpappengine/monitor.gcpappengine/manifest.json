@@ -1,0 +1,86 @@
+{
+  "description": "Tests Google App Engine to validate that autoscaling, pinging an app, deployments, and migrating traffic are operational.",
+  "has_cleanup_tasks": false,
+  "logical_name": "gcpappengine",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "Performs several rapid requests to trigger autoscaling.",
+      "logical_name": "AutoScaleUp",
+      "name": "Auto Scale Up",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Pings an existing instance.",
+      "logical_name": "PingApp",
+      "name": "Ping App",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Deploys a new version of the service.",
+      "logical_name": "CreateVersion",
+      "name": "Create Version",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions/create"
+    },
+    {
+      "description": "Migrates traffic of a service from one version to another.",
+      "logical_name": "MigrateTraffic",
+      "name": "Migrate Traffic",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services/patch"
+    },
+    {
+      "description": "Waits for instance count to return to 0. Instances are created with a 10s idle timeout.",
+      "logical_name": "AutoScaleDown",
+      "name": "Auto Scale Down",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Destroys a version of the service.",
+      "logical_name": "DestroyVersion",
+      "name": "Destroy Version",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions/delete"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "gcpappengine",
+  "config_values": [
+    {
+      "description": "The GCP Project ID of the project to perform app engine operations on.",
+      "required": true,
+      "name": "ProjectId",
+      "environment_variable_name": "METRIST_GCPAPPENGINE_PROJECT_ID"
+    },
+    {
+      "description": "The URL to the zip file to use for deployments.",
+      "required": true,
+      "name": "AppZipUrl",
+      "environment_variable_name": "METRIST_GCPAPPENGINE_APP_ZIP_URL"
+    },
+    {
+      "description": "The hostname to use for the deployed app",
+      "required": true,
+      "name": "AppHostname",
+      "environment_variable_name": "METRIST_GCPAPPENGINE_APP_HOSTNAME"
+    },
+    {
+      "description": "The base 64 encoded credentials string to use for appengine operations.",
+      "required": true,
+      "name": "PrivateKey",
+      "environment_variable_name": "METRIST_GCPAPPENGINE_PRIVATE_KEY"
+    },
+    {
+      "description": "An environment tag to use for deployed elements.",
+      "required": true,
+      "name": "EnvironmentTag",
+      "environment_variable_name": "METRIST_GCPAPPENGINE_ENVIRONMENT_TAG"
+    }
+  ]
+}

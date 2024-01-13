@@ -1,0 +1,72 @@
+{
+  "description": "Monitor the observability of [Azure Kubernetes Service](https://learn.microsoft.com/azure/aks/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "azureaks",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to query an existing record on Route53 via DNS Lookup.",
+      "logical_name": "QueryExistingDNSRecord",
+      "name": "Query Existing DNS Record",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to create a Kubernetes Cluster in a given Azure Region. Note: this monitor has cleanup routines that run when other steps are complete. If you run this monitor through several Orchestrators, you may choose which Orchestrator(s) shall perform the cleanup.",
+      "logical_name": "CreateCluster",
+      "name": "Create Cluster",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to deploy a container in a cluster created in a previous step.",
+      "logical_name": "CreateDeployment",
+      "name": "Create Deployment",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to remove the container deployed in a previous step.",
+      "logical_name": "RemoveDeployment",
+      "name": "Remove Deployment",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azureaks",
+  "config_values": [
+    {
+      "description": "A Service Principal Client Id.",
+      "required": true,
+      "name": "ClientID",
+      "environment_variable_name": "METRIST_AZUREAKS_CLIENT_I_D"
+    },
+    {
+      "description": "A Service Principal Secret.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_AZUREAKS_CLIENT_SECRET"
+    },
+    {
+      "description": "A subscription ID.",
+      "required": true,
+      "name": "SubscriptionID",
+      "environment_variable_name": "METRIST_AZUREAKS_SUBSCRIPTION_I_D"
+    },
+    {
+      "description": "A tenant ID for which the Service Principal has authorization.",
+      "required": true,
+      "name": "TenantID",
+      "environment_variable_name": "METRIST_AZUREAKS_TENANT_I_D"
+    },
+    {
+      "description": "A valid Azure region.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AZUREAKS_REGION"
+    }
+  ]
+}

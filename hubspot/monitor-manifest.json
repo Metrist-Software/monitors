@@ -1,0 +1,9 @@
+{
+  "description": "Tests HubSpot to validate that contacts can be retrieved.",
+  "logical_name": "hubspot",
+  "name": "HubSpot",
+  "groups": [
+    "api"
+  ],
+  "status_page_url": "https://status.hubspot.com/"
+}

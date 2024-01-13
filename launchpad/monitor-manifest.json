@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for LaunchPad.",
+  "logical_name": "launchpad",
+  "name": "LaunchPad",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://launchpad.statuspage.io/"
+}

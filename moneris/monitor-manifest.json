@@ -1,0 +1,8 @@
+{
+  "description": "Tests Moneris to validate that purchases and refunds work with a test credit card.",
+  "logical_name": "moneris",
+  "name": "Moneris",
+  "groups": [
+    "api"
+  ]
+}

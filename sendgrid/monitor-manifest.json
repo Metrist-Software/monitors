@@ -1,0 +1,9 @@
+{
+  "description": "Tests SendGrid to validate that emails can be sent.",
+  "logical_name": "sendgrid",
+  "name": "SendGrid",
+  "groups": [
+    "api"
+  ],
+  "status_page_url": "https://status.sendgrid.com/"
+}

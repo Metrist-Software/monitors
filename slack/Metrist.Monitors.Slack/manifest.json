@@ -1,0 +1,46 @@
+{
+  "description": "Tests Slack to validate that messages can be sent.",
+  "has_cleanup_tasks": false,
+  "logical_name": "slack",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Sends a message through the API.",
+      "logical_name": "PostMessage",
+      "name": "Post Message",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://api.slack.com/methods/chat.postMessage"
+    },
+    {
+      "description": "Reads the previously sent message through the API.",
+      "logical_name": "ReadMessage",
+      "name": "Read Message",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://api.slack.com/methods/conversations.history"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "slack",
+  "config_values": [
+    {
+      "description": "The Slack channel to use.",
+      "required": true,
+      "name": "Channel",
+      "environment_variable_name": "METRIST_SLACK_CHANNEL"
+    },
+    {
+      "description": "The API token to use.",
+      "required": true,
+      "name": "ApiToken",
+      "environment_variable_name": "METRIST_SLACK_API_TOKEN"
+    },
+    {
+      "description": "The tag to use. The tag is visible in the automated messages.",
+      "required": true,
+      "name": "Tag",
+      "environment_variable_name": "METRIST_SLACK_TAG"
+    }
+  ]
+}

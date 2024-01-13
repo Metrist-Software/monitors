@@ -1,0 +1,127 @@
+{
+  "description": "Monitor the observability of [Azure Content Delivery Network](https://azure.microsoft.com/products/cdn/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "azurecdn",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to retrieve an existing file from CDN cache.",
+      "logical_name": "GetLongCachedFile",
+      "name": "Get Long Cached File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step uploads a new file to the CDN and attempts to retrieve it from CDN cache.",
+      "logical_name": "GetNewFile",
+      "name": "Get New File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to purge a file uploaded in a previous step.",
+      "logical_name": "PurgeFile",
+      "name": "Purge File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to update an existing file, then retrieve the updated version from CDN cache.",
+      "logical_name": "UpdateFile",
+      "name": "Update File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete a file, purge the file from cache, then confirm the file no longer exists.",
+      "logical_name": "DeleteFile",
+      "name": "Delete File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azurecdn",
+  "config_values": [
+    {
+      "description": "A blob connection string.",
+      "required": true,
+      "name": "BlobStorageConnectionString",
+      "environment_variable_name": "METRIST_AZURECDN_BLOB_STORAGE_CONNECTION_STRING"
+    },
+    {
+      "description": "A container name.",
+      "required": true,
+      "name": "BlobStorageContainerName",
+      "environment_variable_name": "METRIST_AZURECDN_BLOB_STORAGE_CONTAINER_NAME"
+    },
+    {
+      "description": "A file name.",
+      "required": true,
+      "name": "CacheFileName",
+      "environment_variable_name": "METRIST_AZURECDN_CACHE_FILE_NAME"
+    },
+    {
+      "description": "File path.",
+      "required": true,
+      "name": "CacheFilePath",
+      "environment_variable_name": "METRIST_AZURECDN_CACHE_FILE_PATH"
+    },
+    {
+      "description": "A CDN endpoint name.",
+      "required": true,
+      "name": "CdnEndpointName",
+      "environment_variable_name": "METRIST_AZURECDN_CDN_ENDPOINT_NAME"
+    },
+    {
+      "description": "A CDN profile name.",
+      "required": true,
+      "name": "CdnProfileName",
+      "environment_variable_name": "METRIST_AZURECDN_CDN_PROFILE_NAME"
+    },
+    {
+      "description": "An Active Directory application Id.",
+      "required": true,
+      "name": "ClientID",
+      "environment_variable_name": "METRIST_AZURECDN_CLIENT_I_D"
+    },
+    {
+      "description": "A client secret associated with the application Id.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_AZURECDN_CLIENT_SECRET"
+    },
+    {
+      "description": "A resource group name.",
+      "required": true,
+      "name": "ResourceGroupName",
+      "environment_variable_name": "METRIST_AZURECDN_RESOURCE_GROUP_NAME"
+    },
+    {
+      "description": "A GUID that identifies a subscription and underlying services.",
+      "required": true,
+      "name": "SubscriptionID",
+      "environment_variable_name": "METRIST_AZURECDN_SUBSCRIPTION_I_D"
+    },
+    {
+      "description": "A unique identifier of the Active Directory instance.",
+      "required": true,
+      "name": "TenantID",
+      "environment_variable_name": "METRIST_AZURECDN_TENANT_I_D"
+    },
+    {
+      "description": "A valid Azure region.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AZURECDN_REGION"
+    },
+    {
+      "description": "A tag used for created resources.",
+      "required": true,
+      "name": "EnvironmentTag",
+      "environment_variable_name": "METRIST_AZURECDN_ENVIRONMENT_TAG"
+    }
+  ]
+}

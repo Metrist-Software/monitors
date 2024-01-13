@@ -1,0 +1,80 @@
+{
+  "description": "Tests GitHub to validate that code can be pushed and pulled and that remote branches can be removed.",
+  "has_cleanup_tasks": false,
+  "logical_name": "github",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Pulls code from a git repository.",
+      "logical_name": "PullCode",
+      "name": "Pull Code",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Pushes code to a git repository.",
+      "logical_name": "PushCode",
+      "name": "Push Code",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Removes a remote branch from a git repository.",
+      "logical_name": "RemoveRemoteBranch",
+      "name": "Remove Remote Branch",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Loads the pull requests web UI.",
+      "logical_name": "PullRequests",
+      "name": "Pull Requests",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Loads the issues web UI.",
+      "logical_name": "Issues",
+      "name": "Issues",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Loads a file from raw.githubusercontent.com.",
+      "logical_name": "Raw",
+      "name": "Raw",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "github",
+  "config_values": [
+    {
+      "description": "Github username to use for Github operations.",
+      "required": true,
+      "name": "Username",
+      "environment_variable_name": "METRIST_GITHUB_USERNAME"
+    },
+    {
+      "description": "Github repository name to use for Github operations.",
+      "required": true,
+      "name": "Repository",
+      "environment_variable_name": "METRIST_GITHUB_REPOSITORY"
+    },
+    {
+      "description": "Github API token with access to Issues, Pull, and Push.",
+      "required": true,
+      "name": "ApiToken",
+      "environment_variable_name": "METRIST_GITHUB_API_TOKEN"
+    },
+    {
+      "description": "If running against an organization repository, supply the organization slug (ex. metrist).",
+      "required": false,
+      "name": "Organization",
+      "environment_variable_name": "METRIST_GITHUB_ORGANIZATION"
+    }
+  ]
+}

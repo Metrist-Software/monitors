@@ -1,0 +1,47 @@
+{
+  "description": "Tests Twilio Video to validate that rooms can be created, retrieved, and completed.",
+  "has_cleanup_tasks": false,
+  "logical_name": "twiliovid",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Creates a room using the Twilio C# library for the REST API.",
+      "logical_name": "CreateRoom",
+      "name": "Create Room",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://www.twilio.com/docs/libraries/reference/twilio-csharp/5.65.0/class_twilio_1_1_rest_1_1_video_1_1_v1_1_1_room_resource.html#a8ff7386b8109417ae9953ec02ede1167"
+    },
+    {
+      "description": "Fetches the room using the Twilio C# library for the REST API.",
+      "logical_name": "GetRoom",
+      "name": "Get Room",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://www.twilio.com/docs/libraries/reference/twilio-csharp/5.65.0/class_twilio_1_1_rest_1_1_video_1_1_v1_1_1_room_resource.html#a8dd4b994f39366d141b2ba4da5b6e9fe"
+    },
+    {
+      "description": "Updates the room, setting its status to completed, using the Twilio C# library for the REST API.",
+      "logical_name": "CompleteRoom",
+      "name": "Complete Room",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://www.twilio.com/docs/libraries/reference/twilio-csharp/5.65.0/class_twilio_1_1_rest_1_1_video_1_1_v1_1_1_room_resource.html#af9cdd2f1929ad6278f8c7f3aeb5794a7"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "twiliovid",
+  "config_values": [
+    {
+      "description": "The account SID to use.",
+      "required": true,
+      "name": "AccountSid",
+      "environment_variable_name": "METRIST_TWILIOVID_ACCOUNT_SID"
+    },
+    {
+      "description": "The auth token to use.",
+      "required": true,
+      "name": "AuthToken",
+      "environment_variable_name": "METRIST_TWILIOVID_AUTH_TOKEN"
+    }
+  ]
+}

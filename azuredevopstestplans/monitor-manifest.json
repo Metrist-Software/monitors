@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure DevOps Test Plans service](https://azure.microsoft.com/products/devops/test-plans/).",
+  "logical_name": "azuredevopstestplans",
+  "name": "Azure DevOps Test Plans",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.dev.azure.com/"
+}

@@ -1,0 +1,44 @@
+{
+  "definitions": {
+    "config_variables_ref": {
+      "optionalProperties": {
+        "description": { "type": "string" }
+      },
+      "properties": {
+        "name": { "type": "string" },
+        "environment_variable_name": { "type": "string" },
+        "required": { "type": "boolean" }
+      }
+    },
+    "steps_ref": {
+      "optionalProperties": {
+        "description": { "type": "string" },
+        "docs_url": { "type": "string" }
+      },
+      "properties": {
+        "logical_name": { "type": "string" },
+        "name": { "type": "string" },
+        "default_timeout_seconds": { "type": "uint16" }
+
+      }
+    }
+  },
+  "optionalProperties": {
+    "contributors": { "elements": { "type": "string" } },
+    "description": { "type": "string" },
+    "config_values": { "elements": { "ref": "config_variables_ref" } },
+    "homepage": { "type": "string" },
+    "license": { "type": "string" },
+    "status_page_url": { "type": "string" }
+  },
+  "properties": {
+    "has_cleanup_tasks": { "type": "boolean" },
+    "logical_name": { "type": "string" },
+    "package_name": { "type": "string" },
+    "publisher": { "type": "string" },
+    "repository": { "type": "string" },
+    "runtime_type": { "enum": ["dll", "exe"] },
+    "steps": { "elements": { "ref": "steps_ref" } },
+    "version": { "type": "string" }
+  }
+}

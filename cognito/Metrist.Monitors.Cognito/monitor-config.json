@@ -1,0 +1,21 @@
+{
+  "name": "cognito",
+  "description": "AWS Cognito",
+  "tag": "aws",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "CreateUser"
+    },
+    {
+      "name": "DeleteUser"
+    }
+  ],
+  "extra_config": {
+    "AwsAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/${ORCHESTRATOR_REGION}/monitors/cognito/secrets#aws_access_key_id",
+		"AwsSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/${ORCHESTRATOR_REGION}/monitors/cognito/secrets#aws_secret_access_key",
+		"UserPool": "@secret@:@env@:/${ENVIRONMENT_TAG}/${ORCHESTRATOR_REGION}/monitors/cognito/secrets#user_pool"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ses",
+  "description": "AWS SES",
+  "tag": "aws",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "SendEmail"
+    }
+  ],
+  "extra_config": {
+    "ToEmail": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/ses/${ORCHESTRATOR_REGION}/secrets#to_email",
+    "FromEmail": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/ses/${ORCHESTRATOR_REGION}/secrets#from_email",
+    "AwsAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/ses/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+    "AwsSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/ses/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key"
+  }
+}

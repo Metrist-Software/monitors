@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure Content Delivery Network](https://azure.microsoft.com/products/cdn/).",
+  "logical_name": "azurecdn",
+  "name": "Azure CDN",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

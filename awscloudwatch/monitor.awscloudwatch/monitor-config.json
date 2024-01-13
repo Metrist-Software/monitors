@@ -1,0 +1,22 @@
+{
+  "name": "awscloudwatch",
+  "description": "AWS Cloudwatch",
+  "tag": "aws",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "SubmitEvent",
+      "description": "Submit a metric to Cloudwatch using the PutMetricData API call"
+    },
+    {
+      "name": "GetEvent",
+      "description": "List metrics matching our test metric we submitted using the ListMetricsCommand API call"
+    }
+  ],
+  "extra_config": {
+    "AWSAccessKeyID": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awscloudwatch/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+    "AWSSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awscloudwatch/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [AWS Route53 service](https://aws.amazon.com/route53/).",
+  "logical_name": "awsroute53",
+  "name": "AWS Route53",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

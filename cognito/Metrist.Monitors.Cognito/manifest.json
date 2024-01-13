@@ -1,0 +1,46 @@
+{
+  "description": "Monitor the observability of the [AWS Cognito Identity Provider](https://aws.amazon.com/cognito/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "cognito",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to create a user account (randomly named) using Cognito Identity Provider Client.",
+      "logical_name": "CreateUser",
+      "name": "Create User",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete the user account created in a previous step.",
+      "logical_name": "DeleteUser",
+      "name": "Delete User",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "cognito",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_COGNITO_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_COGNITO_AWS_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "Name of user pool.",
+      "required": true,
+      "name": "UserPool",
+      "environment_variable_name": "METRIST_COGNITO_USER_POOL"
+    }
+  ]
+}

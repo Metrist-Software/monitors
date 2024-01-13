@@ -1,0 +1,29 @@
+{
+    "name": "ec2",
+    "description": "AWS EC2",
+    "tag": "aws",
+    "run_spec": {
+        "type": "dll"
+    },
+    "steps": [
+        {
+            "name": "RunInstance",
+            "description": "Launches the specified number of instances using an AMI for which you have permissions."
+        },
+        {
+            "name": "TerminateInstance",
+            "description": "Shuts down the specified AWS EC2 instance."
+        },
+        {
+            "name": "DescribePersistentInstance",
+            "description": "Describes the specified instances."
+        }
+    ],
+    "extra_config": {
+        "Region":                "@env@:${ORCHESTRATOR_REGION}",
+        "AmiID":                 "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/ec2/${ORCHESTRATOR_REGION}/secrets#ami_id",
+        "PersistentInstanceId":  "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/ec2/${ORCHESTRATOR_REGION}/secrets#persistent_instance_id",
+        "AwsAccessKeyId":        "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/ec2/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+        "AwsSecretAccessKey":    "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/ec2/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key"
+    }
+}

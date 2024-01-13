@@ -1,0 +1,47 @@
+{
+  "description": "Tests Bambora to validate that purchases, refunds, and voids work with a test credit card.",
+  "has_cleanup_tasks": false,
+  "logical_name": "bambora",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Attempts a test purchase.",
+      "logical_name": "TestPurchase",
+      "name": "Test Purchase",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Attempts a test refund.",
+      "logical_name": "TestRefund",
+      "name": "Test Refund",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Attempts a test void.",
+      "logical_name": "TestVoid",
+      "name": "Test Void",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "bambora",
+  "config_values": [
+    {
+      "description": "An API key to use to perform the test transactions.",
+      "required": true,
+      "name": "PaymentsAPIKey",
+      "environment_variable_name": "METRIST_BAMBORA_PAYMENTS_A_P_I_KEY"
+    },
+    {
+      "description": "A merchant ID to use for the test transactions.",
+      "required": true,
+      "name": "MerchantId",
+      "environment_variable_name": "METRIST_BAMBORA_MERCHANT_ID"
+    }
+  ]
+}

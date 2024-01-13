@@ -1,0 +1,26 @@
+{
+  "name": "zendesk",
+  "description": "Zendesk",
+  "tag": "saas",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "GetUsers"
+    },
+    {
+      "name": "CreateTicket"
+    },
+    {
+      "name": "SoftDeleteTicket"
+    },
+    {
+      "name": "PermanentlyDeleteTicket"
+    }
+  ],
+  "extra_config": {
+    "ApiToken": "@secret@:@env@:/${ENVIRONMENT_TAG}/zendesk/api-token#token",
+    "Subdomain": "@secret@:@env@:/${ENVIRONMENT_TAG}/zendesk/api-token#subdomain"
+  }
+}

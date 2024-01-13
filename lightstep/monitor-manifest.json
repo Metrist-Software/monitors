@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Lightstep.",
+  "logical_name": "lightstep",
+  "name": "Lightstep",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.lightstep.com/"
+}

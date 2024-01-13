@@ -1,0 +1,45 @@
+{
+  "description": "Tests Twilio Video to validate that rooms can be joined.",
+  "has_cleanup_tasks": false,
+  "logical_name": "twiliovid",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "Joins the room using a headless Chrome browser.",
+      "logical_name": "JoinRoom",
+      "name": "Join Room",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "twiliovidclient",
+  "config_values": [
+    {
+      "description": "The account SID to use.",
+      "required": true,
+      "name": "AccountSid",
+      "environment_variable_name": "METRIST_TWILIOVID_ACCOUNT_SID"
+    },
+    {
+      "description": "The auth token to use.",
+      "required": true,
+      "name": "AuthToken",
+      "environment_variable_name": "METRIST_TWILIOVID_AUTH_TOKEN"
+    },
+    {
+      "description": "The API key to use.",
+      "required": true,
+      "name": "ApiKey",
+      "environment_variable_name": "METRIST_TWILIOVID_API_KEY"
+    },
+    {
+      "description": "The API secret to use.",
+      "required": true,
+      "name": "ApiSecret",
+      "environment_variable_name": "METRIST_TWILIOVID_API_SECRET"
+    }
+  ]
+}

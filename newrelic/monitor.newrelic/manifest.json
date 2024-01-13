@@ -1,0 +1,67 @@
+{
+  "description": "Monitor the observability of [New Relic's Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "newrelic",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to submit an event through the Event API.",
+      "logical_name": "SubmitEvent",
+      "name": "SubmitEvent",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/#submit-event"
+    },
+    {
+      "description": "This step attempts to use the NerdGraph Graphql API to retrieve the event submitted in the previous step.",
+      "logical_name": "CheckEvent",
+      "name": "CheckEvent",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-nrql-tutorial/"
+    },
+    {
+      "description": "Creates a synthetic monitor that pings https://newrelic.com",
+      "logical_name": "CreateSyntheticMonitor",
+      "name": "Create Synthetic Monitor",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.newrelic.com/docs/apis/synthetics-rest-api/monitor-examples/manage-synthetics-monitors-rest-api/"
+    },
+    {
+      "description": "Waits for the result of the created synthetic monitor to be available.",
+      "logical_name": "WaitForSyntheticMonitorResponse",
+      "name": "Wait For Synthetic Monitor Response",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.newrelic.com/docs/apis/synthetics-rest-api/monitor-examples/manage-synthetics-monitors-rest-api/"
+    },
+    {
+      "description": "Deletes the previously created synthetic monitor.",
+      "logical_name": "DeleteSyntheticMonitor",
+      "name": "Delete Synthetic Monitor",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.newrelic.com/docs/apis/synthetics-rest-api/monitor-examples/manage-synthetics-monitors-rest-api/"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "newrelic",
+  "config_values": [
+    {
+      "description": "A New Relic account number.",
+      "required": true,
+      "name": "NewRelicAccountNumber",
+      "environment_variable_name": "METRIST_NEWRELIC_NEW_RELIC_ACCOUNT_NUMBER"
+    },
+    {
+      "description": "For submitting event to New Relic's Insight API.",
+      "required": true,
+      "name": "NewRelicInsightApiKey",
+      "environment_variable_name": "METRIST_NEWRELIC_NEW_RELIC_INSIGHT_API_KEY"
+    },
+    {
+      "description": "Nerdgraph is New Relic's recommended API for querying events.",
+      "required": true,
+      "name": "NewRelicNerdgraphUserKey",
+      "environment_variable_name": "METRIST_NEWRELIC_NEW_RELIC_NERDGRAPH_USER_KEY"
+    }
+  ]
+}

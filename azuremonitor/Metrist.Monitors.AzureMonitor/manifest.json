@@ -1,0 +1,55 @@
+{
+  "description": "Monitor the observability of [Azure Monitor service](https://azure.microsoft.com/products/monitor/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "azuremonitor",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to track a known type of event.",
+      "logical_name": "TrackEvent",
+      "name": "Track Event",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to track a metric with a given value.",
+      "logical_name": "TrackMetricValue",
+      "name": "Track Metric Value",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step throws an exception and attempts to track it.",
+      "logical_name": "TrackExc",
+      "name": "Track Exception",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to track a monitor trace.",
+      "logical_name": "TrackTrace",
+      "name": "Track Trace",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to send error details to a log.",
+      "logical_name": "SendLog",
+      "name": "Send Log",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azuremonitor",
+  "config_values": [
+    {
+      "description": "A connection string to be used by a ApplicationInsightsServiceOptions object to AddApplicationInsightsTelemetryWorkerService.",
+      "required": true,
+      "name": "ConnectionString",
+      "environment_variable_name": "METRIST_AZUREMONITOR_CONNECTION_STRING"
+    }
+  ]
+}

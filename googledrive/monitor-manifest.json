@@ -1,0 +1,8 @@
+{
+  "description": "Monitor the observability of [Google Drive API](https://developers.google.com/drive/api/).",
+  "logical_name": "googledrive",
+  "name": "Google Drive",
+  "groups": [
+    "saas"
+  ]
+}

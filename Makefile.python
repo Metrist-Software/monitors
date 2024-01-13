@@ -1,0 +1,24 @@
+#
+#  Makefile fragments for Python based monitors
+#
+
+compile:
+
+test:
+
+build: compile
+
+package: build
+	# Python monitors are built in Docker for now.
+	mkdir -p dist build __pycache__
+	cp sampledata.csv dist/sampledata.csv
+	docker build . -t $(MONITOR_NAME)-builder
+	docker run --user $(shell id -u):$(shell id -g) -v "$(shell pwd):/app/" -e OUTPUT_NAME=$(MONITOR_NAME) $(MONITOR_NAME)-builder
+	zip -j $(MONITOR_NAME)-$(VERSION)-linux-x64.zip dist/*
+	echo $(VERSION) >$(MONITOR_NAME)-latest$(QUALIFIER).txt
+
+deps:
+	npm ci
+
+clean::
+	rm -rf dist build __pycache__

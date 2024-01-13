@@ -1,0 +1,26 @@
+{
+  "name": "azureappservice",
+  "version": "1.0.0",
+  "bin": "build/main.js",
+  "scripts": {
+    "build": "tsc",
+    "compile": "tsc --pretty",
+    "watch": "tsc -w",
+    "test": "echo ok"
+  },
+  "dependencies": {
+    "@azure/arm-appservice": "^13.0.3",
+    "@azure/arm-resources": "^5.1.0",
+    "@metrist/azure": "^1.0.6",
+    "@metrist/protocol": "^3.0.0",
+    "delay": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/async-exit-hook": "^2.0.0",
+    "@types/node": "^18.14.0",
+    "@types/ping": "^0.4.1",
+    "typescript": "^4.9.5",
+    "typescript-language-server": "^3.3.0"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@metrist/browser",
+  "version": "4.0.0",
+  "description": "Browser support for Metrist synthetic monitors written in NodeJS",
+  "author": "Metrist Software, Inc.",
+  "license": "Apache-2.0",
+  "main": "main.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc"
+  },
+  "dependencies": {
+    "@metrist/protocol": "^3.0.0",
+    "@sparticuz/chromium": "^111.0.0",
+    "@types/async-exit-hook": "^2.0.0",
+    "@types/chrome": "0.0.208",
+    "@types/express": "^4.17.17",
+    "async-exit-hook": "^2.0.1",
+    "express": "^4.18.2",
+    "path": "^0.12.7",
+    "puppeteer-core": "^19.7.2"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.14.0",
+    "typescript": "^4.9.5"
+  }
+}

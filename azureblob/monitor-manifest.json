@@ -1,0 +1,9 @@
+{
+  "description": "Tests the Azure Blob Storage service to validate that blobs can be added, deleted, and retrieved, and that containers and storage accounts can be created.",
+  "logical_name": "azureblob",
+  "name": "Azure Blob Storage",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

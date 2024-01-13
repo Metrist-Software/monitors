@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Maven Central.",
+  "logical_name": "mavencentral",
+  "name": "Maven Central",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.maven.org/"
+}

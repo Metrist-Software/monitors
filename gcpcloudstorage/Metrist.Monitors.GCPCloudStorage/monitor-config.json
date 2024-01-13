@@ -1,0 +1,34 @@
+{
+  "name": "gcpcloudstorage",
+  "description": "Google Cloud Storage",
+  "tag": "gcp",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "CreateBucket",
+      "description": "Creates a GCS Bucket"
+    },
+    {
+      "name": "UploadObject",
+      "description": "Uploads an object to the bucket"
+    },
+    {
+      "name": "GetObject",
+      "description": "Fetches the bucket object"
+    },
+    {
+      "name": "DeleteObject",
+      "description": "Deletes bucket object"
+    },
+    {
+      "name": "DeleteBucket",
+      "description": "Deletes a GCS bucket"
+    }
+  ],
+  "extra_config": {
+    "PrivateKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/gcpcloudstorage/secrets#private_key",
+    "ProjectId":"@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/gcpcloudstorage/secrets#project_id"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [AWS Simple Storage Service (S3)](https://aws.amazon.com/s3/).",
+  "logical_name": "s3",
+  "name": "AWS S3",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

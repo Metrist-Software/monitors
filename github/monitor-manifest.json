@@ -1,0 +1,9 @@
+{
+  "description": "Tests GitHub to validate that code can be pushed and pulled and that remote branches can be removed.",
+  "logical_name": "github",
+  "name": "GitHub",
+  "groups": [
+    "api"
+  ],
+  "status_page_url": "https://www.githubstatus.com/"
+}

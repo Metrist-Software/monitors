@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the availability of [AWS Secrets Manager](https://aws.amazon.com/secretsmanager/).",
+  "logical_name": "awssecretsmanager",
+  "name": "AWS Secrets Manager",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

@@ -1,0 +1,40 @@
+{
+  "description": "Tests Heroku to validate that applications can be pinged, release webhooks are sent, and configurations can be updated.",
+  "has_cleanup_tasks": false,
+  "logical_name": "heroku",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Pings an application.",
+      "logical_name": "AppPing",
+      "name": "App Ping",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Updates an application's configuration.",
+      "logical_name": "ConfigUpdate",
+      "name": "Config Update",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "heroku",
+  "config_values": [
+    {
+      "description": "An API key with access to update the configuration of the app described in AppName.",
+      "required": true,
+      "name": "ApiKey",
+      "environment_variable_name": "METRIST_HEROKU_API_KEY"
+    },
+    {
+      "description": "The name of an existing App on Heroku.",
+      "required": true,
+      "name": "AppName",
+      "environment_variable_name": "METRIST_HEROKU_APP_NAME"
+    }
+  ]
+}

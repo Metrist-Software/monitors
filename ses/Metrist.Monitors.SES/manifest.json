@@ -1,0 +1,45 @@
+{
+  "description": "Monitor the observability of [AWS Simple Email Service](https://aws.amazon.com/ses/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "ses",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to send a message via SES.",
+      "logical_name": "SendEmail",
+      "name": "Send Email",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "ses",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_AWS_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "An email address.",
+      "required": true,
+      "name": "FromEmail",
+      "environment_variable_name": "METRIST_FROM_EMAIL"
+    },
+    {
+      "description": "An email address.",
+      "required": true,
+      "name": "ToEmail",
+      "environment_variable_name": "METRIST_TO_EMAIL"
+    }
+  ]
+}

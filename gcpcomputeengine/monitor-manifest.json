@@ -1,0 +1,9 @@
+{
+  "description": "Tests Google Compute Engine to validate that instances can be created, described, and deleted.",
+  "logical_name": "gcpcomputeengine",
+  "name": "GCP Compute Engine",
+  "groups": [
+    "gcp"
+  ],
+  "status_page_url": "https://status.cloud.google.com/"
+}

@@ -1,0 +1,46 @@
+{
+  "description": "Tests Trello to validate that cards can be created and deleted.",
+  "has_cleanup_tasks": true,
+  "logical_name": "trello",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Creates a card using the REST API.",
+      "logical_name": "CreateCard",
+      "name": "Create Card",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post"
+    },
+    {
+      "description": "Deletes the card using the REST API.",
+      "logical_name": "DeleteCard",
+      "name": "Delete Card",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-delete"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "trello",
+  "config_values": [
+    {
+      "description": "The app key to use.",
+      "required": true,
+      "name": "AppKey",
+      "environment_variable_name": "METRIST_TRELLO_APP_KEY"
+    },
+    {
+      "description": "The user token to use.",
+      "required": true,
+      "name": "UserToken",
+      "environment_variable_name": "METRIST_TRELLO_USER_TOKEN"
+    },
+    {
+      "description": "The list ID to use.",
+      "required": true,
+      "name": "ListId",
+      "environment_variable_name": "METRIST_TRELLO_LIST_ID"
+    }
+  ]
+}

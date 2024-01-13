@@ -1,0 +1,39 @@
+# Common environment variables that are
+# needed by all monitors
+export ENVIRONMENT_TAG ?= dev1
+export AWS_BACKEND_REGION ?= us-east-1
+export METRIST_CLEANUP_ENABLED ?= 1
+
+ifeq ($(CLOUD_PLATFORM), aws)
+  export ORCHESTRATOR_REGION ?= us-east-1
+else ifeq ($(CLOUD_PLATFORM), az)
+  export ORCHESTRATOR_REGION ?= eastus
+else ifeq ($(CLOUD_PLATFORM), gcp)
+  export ORCHESTRATOR_REGION ?= us-west1
+endif
+
+# Stuff mostly for packaging.
+QUALIFIER ?= -preview
+MONITOR_NAME ?= $(shell basename $$PWD|sed 's/.*\.//'|tr '[:upper:]' '[:lower:]')
+SHORT_REV ?= $(shell git rev-parse --short HEAD)
+VERSION ?= $(shell echo `cat ../VERSION`-`date +%Y%m%d%H%M%S`-$(SHORT_REV))
+BASE_DIR ?= $(shell pwd)
+
+.DEFAULT_GOAL := compile
+
+# Common targets
+install_dev:
+	${MAKE} ENV=dev1 install
+
+install_prod:
+	${MAKE} ENV=prod install
+
+install:
+	config=$$PWD/monitor-config.json; \
+	cd ../../../backend; \
+	mix metrist.install_monitor -f $$config -e ${ENV}
+
+# Basic clean. Individual makefiles for specific stacks
+# can add to this. Note the double colon!
+clean::
+	rm -f $(MONITOR_NAME)*.zip $(MONITOR_NAME)*.json $(MONITOR_NAME)*.manifest.json $(MONITOR_NAME)-latest*.txt

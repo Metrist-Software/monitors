@@ -1,0 +1,19 @@
+{
+  "name": "envoy",
+  "description": "Envoy",
+  "tag": "saas",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "GetEmployees"
+    },
+    {
+      "name": "GetReservations"
+    }
+  ],
+  "extra_config": {
+    "clientAPIKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/envoy/${ORCHESTRATOR_REGION}/secrets#api_key"
+  }
+}

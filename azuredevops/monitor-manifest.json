@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure DevOps service](https://azure.microsoft.com/products/devops/).",
+  "logical_name": "azuredevops",
+  "name": "Azure DevOps",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.dev.azure.com/"
+}

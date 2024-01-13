@@ -1,0 +1,66 @@
+{
+  "description": "Monitor the observability of specific [Azure DevOps Board](https://azure.microsoft.com/products/devops/boards/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "azuredevopsboards",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to create a work item on the given board.",
+      "logical_name": "CreateWorkItem",
+      "name": "Create Work Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve a work item created in a previous step.",
+      "logical_name": "GetWorkItem",
+      "name": "Get Work Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to edit a work item created in a previous step.",
+      "logical_name": "EditWorkItem",
+      "name": "Edit Work Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete a work item created in a previous step.",
+      "logical_name": "DeleteWorkItem",
+      "name": "Delete Work Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azuredevopsboards",
+  "config_values": [
+    {
+      "description": "Your Organization name as it appears in `https://dev.azure.com/{Organization}/`.",
+      "required": true,
+      "name": "Organization",
+      "environment_variable_name": "METRIST_AZUREDEVOPSBOARDS_ORGANIZATION"
+    },
+    {
+      "description": "A personal access token associated with your team's project board.",
+      "required": true,
+      "name": "PersonalAccessToken",
+      "environment_variable_name": "METRIST_AZUREDEVOPSBOARDS_PERSONAL_ACCESS_TOKEN"
+    },
+    {
+      "description": "Your Project key as it appears in `https://dev.azure.com/org/{Project}/`.",
+      "required": true,
+      "name": "Project",
+      "environment_variable_name": "METRIST_AZUREDEVOPSBOARDS_PROJECT"
+    },
+    {
+      "description": "Your Team name as it appears in `https://dev.azure.com/org/project/{Team}/_apis/wit/wiql`.",
+      "required": true,
+      "name": "Team",
+      "environment_variable_name": "METRIST_AZUREDEVOPSBOARDS_TEAM"
+    }
+  ]
+}

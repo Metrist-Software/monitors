@@ -1,0 +1,40 @@
+{
+  "name": "gcpappengine",
+  "description": "GCP App Engine",
+  "tag": "gcp",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "AutoScaleUp",
+      "description": "Performs several rapid requests to trigger autoscaling"
+    },
+    {
+      "name": "PingApp",
+      "description": "Pings an existing instance"
+    },
+    {
+      "name": "CreateVersion",
+      "description": "Deploys a new version of the service"
+    },
+    {
+      "name": "MigrateTraffic",
+      "description": "Migrates traffic of a service from one version to another"
+    },
+    {
+      "name": "AutoScaleDown",
+      "description": "Waits for instance count to return to 0. Instances are created with a 10s idle timeout"
+    },
+    {
+      "name": "DestroyVersion",
+      "description": "Destroys a version of the service"
+    }
+  ],
+  "extra_config": {
+    "PrivateKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/gcpappengine/${ORCHESTRATOR_REGION}/secrets#private_key",
+    "ProjectId":"@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/gcpappengine/${ORCHESTRATOR_REGION}/secrets#project_id",
+    "AppZipUrl": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/gcpappengine/${ORCHESTRATOR_REGION}/secrets#app_zip_url",
+    "AppHostname": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/gcpappengine/${ORCHESTRATOR_REGION}/secrets#app_hostname"
+  }
+}

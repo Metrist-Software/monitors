@@ -1,0 +1,27 @@
+{
+  "name": "gcpcomputeengine",
+  "description": "GCP Compute Engine",
+  "tag": "gcp",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "CreateInstance",
+      "description": "Creates an instance"
+    },
+    {
+      "name": "GetInstanceInfo",
+      "description": "Gets instance info"
+    },
+    {
+      "name": "DeleteInstance",
+      "description": "Deletes an instance",
+      "timeout": 240
+    }
+  ],
+  "extra_config": {
+    "PrivateKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/gcpcomputeengine/secrets#private_key",
+    "ProjectId":"@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/gcpcomputeengine/secrets#project_id"
+  }
+}

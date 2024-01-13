@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Hotjar.",
+  "logical_name": "hotjar",
+  "name": "Hotjar",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.hotjar.com/"
+}

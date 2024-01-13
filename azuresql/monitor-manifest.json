@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure SQL database service](https://azure.microsoft.com/products/azure-sql).",
+  "logical_name": "azuresql",
+  "name": "Azure SQL",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

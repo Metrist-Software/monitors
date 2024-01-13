@@ -1,0 +1,53 @@
+{
+  "description": "Monitor the observability of [Azure DevOps service](https://azure.microsoft.com/products/devops/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "azuredevops",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to clone a given repository.",
+      "logical_name": "CloneRepo",
+      "name": "Clone Repo",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to checkout a new branch, write a file, add, commit, and push changes to a given repository.",
+      "logical_name": "PushCode",
+      "name": "Push Code",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to remove the new branch created in a previous step.",
+      "logical_name": "RemoveRemoteBranch",
+      "name": "Remove Remote Branch",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azuredevops",
+  "config_values": [
+    {
+      "description": "The organization name, as in https://dev.azure.com/${this organization}/",
+      "required": true,
+      "name": "organization",
+      "environment_variable_name": "METRIST_AZUREDEVOPSORGANIZATION"
+    },
+    {
+      "description": "A personal access token, as in https://${this personalaccesstoken}@dev.azure.com/",
+      "required": true,
+      "name": "personalAccessToken",
+      "environment_variable_name": "METRIST_AZUREDEVOPSPERSONAL_ACCESS_TOKEN"
+    },
+    {
+      "description": "A repository logical name, as in https://token@dev.azure.com/org/${this.repository}",
+      "required": true,
+      "name": "repository",
+      "environment_variable_name": "METRIST_AZUREDEVOPSREPOSITORY"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Gitpod.",
+  "logical_name": "gitpod",
+  "name": "Gitpod",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://www.gitpodstatus.com/"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "zoom",
+  "description": "Zoom",
+  "tag": "saas",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "GetUsers"
+    }
+  ],
+  "extra_config": {
+    "ApiKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#apiKey",
+    "ApiSecret": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#apiSecret"
+  }
+}

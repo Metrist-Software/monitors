@@ -1,0 +1,9 @@
+{
+  "description": "Tests Datadog to validate that events can be submitted and retrieved.",
+  "logical_name": "datadog",
+  "name": "Datadog",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.datadoghq.com/"
+}

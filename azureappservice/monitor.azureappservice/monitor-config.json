@@ -1,0 +1,16 @@
+{
+  "name": "azureappservice",
+  "description": "Azure App Service",
+  "tag": "azure",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "PingService"
+    }
+  ],
+  "extra_config": {
+    "Hostname": "@secret@:@env@:/${ENVIRONMENT_TAG}/az/${ORCHESTRATOR_REGION}/azureappservice/credentials#hostname"
+  }
+}

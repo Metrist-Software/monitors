@@ -1,0 +1,45 @@
+{
+  "description": "Tests Braintree to validate that sandbox transactions can be submitted.",
+  "has_cleanup_tasks": false,
+  "logical_name": "braintree",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Attempts to submit a sandbox transaction.",
+      "logical_name": "SubmitSandboxTransaction",
+      "name": "Submit Sandbox Transaction",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "braintree",
+  "config_values": [
+    {
+      "description": "The merchant Id to use for the sandbox transaction.",
+      "required": true,
+      "name": "MerchantId",
+      "environment_variable_name": "METRIST_BRAINTREE_MERCHANT_ID"
+    },
+    {
+      "description": "The public key to use for the sandbox transaction.",
+      "required": true,
+      "name": "PublicKey",
+      "environment_variable_name": "METRIST_BRAINTREE_PUBLIC_KEY"
+    },
+    {
+      "description": "The private key to use for the sandbox transaction.",
+      "required": true,
+      "name": "PrivateKey",
+      "environment_variable_name": "METRIST_BRAINTREE_PRIVATE_KEY"
+    },
+    {
+      "description": "The customer Id to use for the sandbox transaction.",
+      "required": true,
+      "name": "CustomerId",
+      "environment_variable_name": "METRIST_BRAINTREE_CUSTOMER_ID"
+    }
+  ]
+}

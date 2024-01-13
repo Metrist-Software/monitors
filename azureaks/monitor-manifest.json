@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure Kubernetes Service](https://learn.microsoft.com/azure/aks/).",
+  "logical_name": "azureaks",
+  "name": "Azure Kubernetes Service",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

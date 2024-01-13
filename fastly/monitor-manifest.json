@@ -1,0 +1,8 @@
+{
+  "description": "Tests Fastly to validate that non-cached and cached files can be retrieved and that caches can be purged.",
+  "logical_name": "fastly",
+  "name": "Fastly",
+  "groups": [
+    "api"
+  ]
+}

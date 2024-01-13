@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure App Service](https://azure.microsoft.com/products/app-service/).",
+  "logical_name": "azureappservice",
+  "name": "Azure App Service",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

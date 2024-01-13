@@ -1,0 +1,64 @@
+{
+  "description": "Monitor the observability of [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "awseks",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to deploy a container into a cluster.",
+      "logical_name": "CreateDeployment",
+      "name": "Create Deployment",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to remove the container deployed in a previous step.",
+      "logical_name": "RemoveDeployment",
+      "name": "Remove Deployment",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awseks",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AWSAccessKeyId",
+      "environment_variable_name": "METRIST_AWSEKS_A_W_S_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "required": true,
+      "name": "AWSSRegion",
+      "environment_variable_name": "METRIST_AWSEKS_A_W_S_REGION"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AWSSecretAccessKey",
+      "environment_variable_name": "METRIST_AWSEKS_A_W_S_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "The name of an existing cluster in which to attemp deployment.",
+      "required": true,
+      "name": "ClusterName",
+      "environment_variable_name": "METRIST_AWSEKS_CLUSTER_NAME"
+    },
+    {
+      "description": "The name of an endpoint for the newly deployed cluster/server.",
+      "required": true,
+      "name": "ClusterServerAddress",
+      "environment_variable_name": "METRIST_AWSEKS_CLUSTER_SERVER_ADDRESS"
+    },
+    {
+      "description": "The Certificate Authority Data related to the cluster server address/endpoint.",
+      "required": true,
+      "name": "ClusterCertificateAuthorityData",
+      "environment_variable_name": "METRIST_AWSEKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA"
+    }
+  ]
+}

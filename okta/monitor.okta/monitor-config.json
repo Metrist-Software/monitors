@@ -1,0 +1,19 @@
+{
+  "name": "okta",
+  "description": "Okta",
+  "tag": "saas",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "GetToken"
+    }
+  ],
+  "extra_config": {
+    "ClientId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/okta/${ORCHESTRATOR_REGION}/secrets#ClientId",
+    "ClientSecret": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/okta/${ORCHESTRATOR_REGION}/secrets#ClientSecret",
+    "Domain": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/okta/${ORCHESTRATOR_REGION}/secrets#Domain",
+    "Scope": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/okta/${ORCHESTRATOR_REGION}/secrets#Scope"
+  }
+}

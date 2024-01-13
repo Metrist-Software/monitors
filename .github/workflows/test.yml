@@ -1,0 +1,16 @@
+name: Run Tests
+
+on: [pull_request]
+
+jobs:
+  test-manifest-validator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run nodejs test suites
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: |
+          cd manifest-validator
+          make test

@@ -1,0 +1,47 @@
+{
+  "description": "Tests EasyPost to validate that addresses can be retrieved in the test and prod environments and that addresses can be verified in the prod environment.",
+  "has_cleanup_tasks": false,
+  "logical_name": "easypost",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Gets addresses in the test environment.",
+      "logical_name": "GetAddressesTest",
+      "name": "Get Addresses Test",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets addresses in the prod environment.",
+      "logical_name": "GetAddressesProd",
+      "name": "Get Addresses Prod",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Verifies addresses in the prod environment.",
+      "logical_name": "VerifyInvalidAddress",
+      "name": "Verify Invalid Address",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "easypost",
+  "config_values": [
+    {
+      "description": "A test environment API key with access to GetAddresses.",
+      "required": true,
+      "name": "TestAPIKey",
+      "environment_variable_name": "METRIST_EASYPOST_TEST_A_P_I_Key"
+    },
+    {
+      "description": "A test environment API key with access to GetAddresses and Validate addresses.",
+      "required": true,
+      "name": "ProdAPIKey",
+      "environment_variable_name": "METRIST_EASYPOST_PROD_A_P_I_Key"
+    }
+  ]
+}

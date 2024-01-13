@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).",
+  "logical_name": "awscloudwatch",
+  "name": "AWS CloudWatch",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

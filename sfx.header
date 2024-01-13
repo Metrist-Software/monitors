@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+me=$(cd $(dirname $0); pwd)/$(basename $0)
+
+# Try to unpack inside the Orchestrator-managed temporary directory,
+# but fallback to ~/.cache if nothing is set. Orchestrator sets
+# TMP, TMPDIR and TEMP_DIR, we just pick one :-)
+if [ -d "$TMPDIR" ]; then
+  cache_root=$TMPDIR
+else
+  cache_root="$HOME/.cache/metrist/tmp"
+  mkdir -p $cache_root
+fi
+cache_template="$cache_root/.sfxXXXXXX"
+cache_dir=$(mktemp -d $cache_template)
+cd $cache_dir
+
+
+ARCHIVE=$(awk '/^__CUT_HERE__/ {print NR + 1; exit 0; }' $me)
+
+tail -n+$ARCHIVE $me | tar x
+
+# Even though Orchestrator will cleanup, it's no effort to do
+# it ourselves and it'll help things if we run this outside
+# Orchestrator for testing purposes.
+trap "rm -rf $cache_dir" 0
+
+./run.sh || exit 1
+exit 0
+__CUT_HERE__

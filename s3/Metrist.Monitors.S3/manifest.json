@@ -1,0 +1,61 @@
+{
+  "description": "Monitor the observability of [AWS Simple Storage Service (S3)](https://aws.amazon.com/s3/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "s3",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to put a bucket, randomly named.",
+      "logical_name": "PutBucket",
+      "name": "Put Bucket",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to put an object in a bucket created in a previous step.",
+      "logical_name": "PutObject",
+      "name": "Put Object",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to get an object placed in a previous step.",
+      "logical_name": "GetObject",
+      "name": "Get Object",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete an object placed in a previous step.",
+      "logical_name": "DeleteObject",
+      "name": "Delete Object",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete a bucket put in a previous step.",
+      "logical_name": "DeleteBucket",
+      "name": "Delete Bucket",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "s3",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_AWS_SECRET_ACCESS_KEY"
+    }
+  ]
+}

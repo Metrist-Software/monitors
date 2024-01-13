@@ -1,0 +1,27 @@
+{
+  "description": "Monitor the observability of [Azure App Service](https://azure.microsoft.com/products/app-service/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "azureappservice",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attemps to ping Azure App Service API.",
+      "logical_name": "PingService",
+      "name": "Ping Service",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azureappservice",
+  "config_values": [
+    {
+      "description": "A valid app host name.",
+      "required": true,
+      "name": "Hostname",
+      "environment_variable_name": "METRIST_AZUREAPPSERVICE_HOST_NAME"
+    }
+  ]
+}

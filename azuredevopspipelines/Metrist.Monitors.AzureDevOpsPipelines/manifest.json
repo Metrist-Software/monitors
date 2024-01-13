@@ -1,0 +1,66 @@
+{
+  "description": "Monitor the observability of [Azure DevOps Pipeslines service](https://azure.microsoft.com/products/devops/pipelines/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "azuredevopspipelines",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to start a workflow on the given pipeline.",
+      "logical_name": "StartMachineWorkflow",
+      "name": "Start Machine Workflow",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to read the result of a workflow started in a previous step.",
+      "logical_name": "WaitForMachineWorkflowRunToComplete",
+      "name": "Wait For Machine Workflow Run To Complete",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to start a workflow using Docker on the given pipeline.",
+      "logical_name": "StartDockerWorkflow",
+      "name": "Start Docker Workflow",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to read the result of a workflow started in a previous step.",
+      "logical_name": "WaitForDockerWorkflowRunToComplete",
+      "name": "Wait For Docker Workflow Run To Complete",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azuredevopspipelines",
+  "config_values": [
+    {
+      "description": "Your Organization name as it appears in `https://dev.azure.com/{Organization}/`.",
+      "required": true,
+      "name": "Organization",
+      "environment_variable_name": "METRIST_AZUREDEVOPSPIPELINES_ORGANIZATION"
+    },
+    {
+      "description": "A personal access token associated with your team's project board.",
+      "required": true,
+      "name": "PersonalAccessToken",
+      "environment_variable_name": "METRIST_AZUREDEVOPSPIPELINES_PERSONAL_ACCESS_TOKEN"
+    },
+    {
+      "description": "Your Project key as it appears in `https://dev.azure.com/org/project/_apis/pipelines/{pipelineId}`.",
+      "required": true,
+      "name": "PipelineId",
+      "environment_variable_name": "METRIST_AZUREDEVOPSPIPELINES_PIPELINE_ID"
+    },
+    {
+      "description": "Your Project key as it appears in `https://dev.azure.com/org/{Project}/`.",
+      "required": true,
+      "name": "Project",
+      "environment_variable_name": "METRIST_AZUREDEVOPSPIPELINES_PROJECT"
+    }
+  ]
+}

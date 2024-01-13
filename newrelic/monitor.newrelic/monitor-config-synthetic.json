@@ -1,0 +1,25 @@
+{
+    "name": "newrelic",
+    "description": "New Relic",
+    "tag": "saas",
+    "run_spec": {
+        "type": "exe"
+    },
+    "interval_secs": 600,
+    "steps": [
+        {
+            "name": "CreateSyntheticMonitor"
+        },
+        {
+            "name": "WaitForSyntheticMonitorResponse"
+        },
+        {
+            "name": "DeleteSyntheticMonitor"
+        }
+    ],
+    "extra_config": {
+        "NewRelicAccountNumber": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/newrelic/${ORCHESTRATOR_REGION}/secrets#new_relic_account_number",
+        "NewRelicInsightAPIKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/newrelic/${ORCHESTRATOR_REGION}/secrets#new_relic_insight_api_key",
+        "NewRelicNerdGraphUSERKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/newrelic/${ORCHESTRATOR_REGION}/secrets#new_relic_nerdgraph_user_key"
+    }
+}

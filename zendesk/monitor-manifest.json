@@ -1,0 +1,8 @@
+{
+  "description": "Tests Zendesk to validate that users can be retrieved and that tickets can be created, soft deleted, and permanently deleted.",
+  "logical_name": "zendesk",
+  "name": "Zendesk",
+  "groups": [
+    "saas"
+  ]
+}

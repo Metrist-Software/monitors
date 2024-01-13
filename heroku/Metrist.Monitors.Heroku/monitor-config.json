@@ -1,0 +1,23 @@
+{
+  "name": "heroku",
+  "description": "Heroku",
+  "tag": "infrastructure",
+  "interval_secs": 600,
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "AppPing"
+    },
+    {
+      "name": "ConfigUpdate"
+    }
+  ],
+  "extra_config": {
+    "ApiKey": "@env@:@secret@:/${ENVIRONMENT_TAG}/monitors/heroku/${ORCHESTRATOR_REGION}/secrets#apiKey",
+    "ApiKeyUser": "@env@:@secret@:/${ENVIRONMENT_TAG}/monitors/heroku/${ORCHESTRATOR_REGION}/secrets#apiKeyUser",
+    "AppName": "@env@:@secret@:/${ENVIRONMENT_TAG}/monitors/heroku/${ORCHESTRATOR_REGION}/secrets#appName",
+    "Region": "@env@:${ORCHESTRATOR_REGION}"
+  }
+}

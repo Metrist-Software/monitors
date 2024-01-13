@@ -1,0 +1,66 @@
+{
+  "description": "Monitor the observability of [Azure Active Directory](https://azure.microsoft.com/products/active-directory).",
+  "has_cleanup_tasks": true,
+  "logical_name": "azuread",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to retrieve an authentication token for a Client/Application.",
+      "logical_name": "Authenticate",
+      "name": "Authenticate",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to add a new user, randomly named, to the given domain.",
+      "logical_name": "WriteUser",
+      "name": "Write User",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve the user account created in a previous step.",
+      "logical_name": "ReadUser",
+      "name": "Read User",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete the user account created in a previous step.",
+      "logical_name": "DeleteUser",
+      "name": "Delete User",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azuread",
+  "config_values": [
+    {
+      "description": "The domain name associated with users in your Active Directory. Example: metrist.io.",
+      "required": true,
+      "name": "Domain",
+      "environment_variable_name": "METRIST_AZUREAD_DOMAIN"
+    },
+    {
+      "description": "The client ID is the unique Application (client) ID assigned to your app by Azure AD when the app was registered. You can find the Application (Client) ID in your Azure subscription by Azure AD => Enterprise applications => Application ID.",
+      "required": true,
+      "name": "ClientId",
+      "environment_variable_name": "METRIST_AZUREAD_CLIENT_I_D"
+    },
+    {
+      "description": "Secret string previously shared with AAD at application registration to prove the identity of the application (the client) requesting the tokens.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_AZUREAD_CLIENT_SECRET"
+    },
+    {
+      "description": "Tenant ID of the Azure AD tenant or a domain associated with this Azure AD tenant, in order to sign-in a user of a specific organization only.",
+      "required": true,
+      "name": "TenantId",
+      "environment_variable_name": "METRIST_AZUREAD_TENANT_I_D"
+    }
+  ]
+}

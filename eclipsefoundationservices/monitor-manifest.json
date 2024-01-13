@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Eclipse Foundation Services .",
+  "logical_name": "eclipsefoundationservices",
+  "name": "Eclipse Foundation Services ",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://www.eclipsestatus.io/"
+}

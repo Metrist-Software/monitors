@@ -1,0 +1,71 @@
+{
+  "description": "Monitor the observability of [AWS RDS service](https://aws.amazon.com/rds/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "awsrds",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to create a MySQL RDS instance.",
+      "logical_name": "CreateInstance",
+      "name": "Create Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to ping the RDS instance created in a previous step.",
+      "logical_name": "PingInstance",
+      "name": "Ping Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to destory the RDS instance created in a previous step.",
+      "logical_name": "DestroyInstance",
+      "name": "Destroy Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awsrds",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_AWSRDS_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_AWSRDS_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "A security group ID relevant to your RDS.",
+      "required": true,
+      "name": "VpcSecurityGroupId",
+      "environment_variable_name": "METRIST_AWSRDS_VPC_SECURITY_GROUP_ID"
+    },
+    {
+      "description": "ID of the subnets associated with the service",
+      "required": true,
+      "name": "DbSubnetGroupName",
+      "environment_variable_name": "METRIST_AWSRDS_DB_SUBNET_GROUP_NAME"
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AWSRDS_REGION"
+    },
+    {
+      "description": "A name used as part of the created RDS instance Id.",
+      "required": true,
+      "name": "EnvironmentTag",
+      "environment_variable_name": "METRIST_AWSRDS_ENVIRONMENT_TAG"
+    }
+  ]
+}

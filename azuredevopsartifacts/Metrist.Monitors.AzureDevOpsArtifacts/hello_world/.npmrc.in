@@ -1,0 +1,10 @@
+registry=https://pkgs.dev.azure.com/metrist-public-us-central/Public/_packaging/public/npm/registry/
+always-auth=true
+; begin auth token
+//pkgs.dev.azure.com/metrist-public-us-central/Public/_packaging/public/npm/registry/:username=metrist-public-us-central
+//pkgs.dev.azure.com/metrist-public-us-central/Public/_packaging/public/npm/registry/:_password=${AZDO_PAT}
+//pkgs.dev.azure.com/metrist-public-us-central/Public/_packaging/public/npm/registry/:email=npm requires email to be set but doesn't use the value
+//pkgs.dev.azure.com/metrist-public-us-central/Public/_packaging/public/npm/:username=metrist-public-us-central
+//pkgs.dev.azure.com/metrist-public-us-central/Public/_packaging/public/npm/:_password=${AZDO_PAT}
+//pkgs.dev.azure.com/metrist-public-us-central/Public/_packaging/public/npm/:email=npm requires email to be set but doesn't use the value
+; end auth token

@@ -1,0 +1,8 @@
+{
+  "description": "Tests Slack to validate that messages can be sent.",
+  "logical_name": "slack",
+  "name": "Slack",
+  "groups": [
+    "saas"
+  ]
+}

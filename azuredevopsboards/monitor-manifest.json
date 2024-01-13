@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of specific [Azure DevOps Board](https://azure.microsoft.com/products/devops/boards/).",
+  "logical_name": "azuredevopsboards",
+  "name": "Azure DevOps Boards",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.dev.azure.com/"
+}

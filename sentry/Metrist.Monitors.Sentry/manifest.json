@@ -1,0 +1,72 @@
+{
+  "description": "Tests Sentry to validate events can be captured and that issues can be created, resolved, and deleted.",
+  "has_cleanup_tasks": false,
+  "logical_name": "sentry",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Captures an event.",
+      "logical_name": "CaptureEvent",
+      "name": "Capture Event",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Waits for an issue to be created from the event.",
+      "logical_name": "WaitForIssue",
+      "name": "Wait For Issue",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Resolves the issue.",
+      "logical_name": "ResolveIssue",
+      "name": "Resolve Issue",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Deletes the issue.",
+      "logical_name": "DeleteIssue",
+      "name": "Delete Issue",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "sentry",
+  "config_values": [
+    {
+      "description": "The API token to use.",
+      "required": true,
+      "name": "ApiToken",
+      "environment_variable_name": "METRIST_SENTRY_API_TOKEN"
+    },
+    {
+      "description": "The ingest URL to use.",
+      "required": true,
+      "name": "IngestUrl",
+      "environment_variable_name": "METRIST_SENTRY_INGEST_URL"
+    },
+    {
+      "description": "The organization slug of the organization to use.",
+      "required": true,
+      "name": "OrganizationSlug",
+      "environment_variable_name": "METRIST_SENTRY_ORGANIZATION_SLUG"
+    },
+    {
+      "description": "The project slug of the project to use.",
+      "required": true,
+      "name": "ProjectSlug",
+      "environment_variable_name": "METRIST_SENTRY_PROJECT_SLUG"
+    },
+    {
+      "description": "The region to use.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_SENTRY_REGION"
+    }
+  ]
+}

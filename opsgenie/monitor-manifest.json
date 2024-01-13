@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Opsgenie.",
+  "logical_name": "opsgenie",
+  "name": "Opsgenie",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://opsgenie.status.atlassian.com/"
+}

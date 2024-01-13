@@ -1,0 +1,39 @@
+{
+  "name": "awscloudfront",
+  "description": "AWS CloudFront",
+  "tag": "aws",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "PublishFile"
+    },
+    {
+      "name": "GetNewFile"
+    },
+    {
+      "name": "UpdateFile"
+    },
+    {
+      "name": "PurgeFile"
+    },
+    {
+      "name": "GetUpdatedFile"
+    },
+    {
+      "name": "DeleteFile"
+    },
+    {
+      "name": "WaitForDeletionPropagation"
+    }
+  ],
+  "extra_config": {
+    "AWSRegion": "@env@:${ORCHESTRATOR_REGION}",
+    "AWSAccessKeyID": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awscloudfront/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+    "AWSSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awscloudfront/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "BucketName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awscloudfront/${ORCHESTRATOR_REGION}/secrets#bucket",
+    "DistributionDomainName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awscloudfront/${ORCHESTRATOR_REGION}/secrets#distribution_domain_name",
+    "DistributionId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awscloudfront/${ORCHESTRATOR_REGION}/secrets#distribution_id"
+  }
+}

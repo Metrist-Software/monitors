@@ -1,0 +1,17 @@
+{
+  "name": "envoy",
+  "version": "1.0.0",
+  "bin": "build/main.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.14.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@metrist/protocol": "^3.0.0",
+    "axios": "^1.3.3"
+  }
+}

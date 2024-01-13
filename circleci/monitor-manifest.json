@@ -1,0 +1,9 @@
+{
+  "description": "Tests CircleCI to validate that Docker and machine workflows can be run and that pipelines can be started.",
+  "logical_name": "circleci",
+  "name": "CircleCI",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.circleci.com/"
+}

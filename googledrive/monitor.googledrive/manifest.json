@@ -1,0 +1,47 @@
+{
+  "description": "Monitor the observability of [Google Drive API](https://developers.google.com/drive/api/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "googledrive",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to create a file.",
+      "logical_name": "CreateDocsFile",
+      "name": "Create Docs File",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developers.google.com/drive/api/v3/reference/files/create"
+    },
+    {
+      "description": "This step attempts to retrieve a file created in a previous step.",
+      "logical_name": "GetDocsFile",
+      "name": "Get Docs File",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developers.google.com/drive/api/v3/reference/files/get"
+    },
+    {
+      "description": "This step attempts to delete a file created in a previous step.",
+      "logical_name": "DeleteDocsFile",
+      "name": "Delete Docs File",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developers.google.com/drive/api/v3/reference/files/delete"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "googledrive",
+  "config_values": [
+    {
+      "description": "A Google Drive account private key.",
+      "required": true,
+      "name": "GoogleDriveAccountPrivateKey",
+      "environment_variable_name": "METRIST_GOOGLEDRIVE_GOOGLE_DRIVE_ACCOUNT_PRIVATE_KEY"
+    },
+    {
+      "description": "A Google Drive account email address.",
+      "required": true,
+      "name": "GoogleDriveAccountEmail",
+      "environment_variable_name": "METRIST_GOOGLEDRIVE_GOOGLE_DRIVE_ACCOUNT_EMAIL"
+    }
+  ]
+}

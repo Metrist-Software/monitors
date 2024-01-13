@@ -1,0 +1,54 @@
+{
+  "description": "Tests Zendesk to validate that users can be retrieved and that tickets can be created, soft deleted, and permanently deleted.",
+  "has_cleanup_tasks": true,
+  "logical_name": "zendesk",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Lists users using the REST API.",
+      "logical_name": "GetUsers",
+      "name": "Get Users",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.zendesk.com/api-reference/ticketing/users/users/#list-users"
+    },
+    {
+      "description": "Creates a ticket using the REST API.",
+      "logical_name": "CreateTicket",
+      "name": "Create Ticket",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/#create-ticket"
+    },
+    {
+      "description": "Deletes the ticket, (soft deletion), using the REST API.",
+      "logical_name": "SoftDeleteTicket",
+      "name": "Soft Delete Ticket",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/#delete-ticket"
+    },
+    {
+      "description": "Permanently deletes the ticket using the REST API.",
+      "logical_name": "PermanentlyDeleteTicket",
+      "name": "Permanently Delete Ticket",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/#delete-ticket-permanently"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "zendesk",
+  "config_values": [
+    {
+      "description": "The API token to use.",
+      "required": true,
+      "name": "ApiToken",
+      "environment_variable_name": "METRIST_ZENDESK_API_TOKEN"
+    },
+    {
+      "description": "Subdomain to run api calls against. E.g. `metrist` for https://metrist.zendesk.com/api",
+      "required": true,
+      "name": "Subdomain",
+      "environment_variable_name": "METRIST_ZENDESK_SUBDOMAIN"
+    }
+  ]
+}

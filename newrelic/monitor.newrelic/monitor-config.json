@@ -1,0 +1,21 @@
+{
+  "name": "newrelic",
+  "description": "New Relic",
+  "tag": "saas",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "SubmitEvent"
+    },
+    {
+      "name": "CheckEvent"
+    }
+  ],
+  "extra_config": {
+    "NewRelicAccountNumber": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/newrelic/${ORCHESTRATOR_REGION}/secrets#new_relic_account_number",
+    "NewRelicInsightAPIKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/newrelic/${ORCHESTRATOR_REGION}/secrets#new_relic_insight_api_key",
+    "NewRelicNerdGraphUSERKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/newrelic/${ORCHESTRATOR_REGION}/secrets#new_relic_nerdgraph_user_key"
+  }
+}

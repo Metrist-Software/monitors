@@ -1,0 +1,46 @@
+{
+  "description": "Tests Jira to validate that issues can be created and deleted.",
+  "has_cleanup_tasks": true,
+  "logical_name": "jira",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Creates an issue using the REST API.",
+      "logical_name": "CreateIssue",
+      "name": "Create Issue",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.atlassian.com/software/jira/docs/api/REST/7.0-SNAPSHOT/#api/2/issue-createIssue"
+    },
+    {
+      "description": "Deletes the issue using the REST API.",
+      "logical_name": "DeleteIssue",
+      "name": "Delete Issue",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.atlassian.com/software/jira/docs/api/REST/7.0-SNAPSHOT/#api/2/issue-deleteIssue"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "jira",
+  "config_values": [
+    {
+      "description": "The API token to use.",
+      "required": true,
+      "name": "ApiToken",
+      "environment_variable_name": "METRIST_JIRA_API_TOKEN"
+    },
+    {
+      "description": "The API token to use.",
+      "required": true,
+      "name": "Url",
+      "environment_variable_name": "METRIST_JIRA_URL"
+    },
+    {
+      "description": "The project key to use.",
+      "required": true,
+      "name": "ProjectKey",
+      "environment_variable_name": "METRIST_JIRA_PROJECT_KEY"
+    }
+  ]
+}

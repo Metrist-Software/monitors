@@ -1,0 +1,8 @@
+{
+  "description": "Neon monitor (neon.tech)",
+  "logical_name": "neon",
+  "name": "Neon",
+  "groups": [
+    "infrastructure"
+  ]
+}

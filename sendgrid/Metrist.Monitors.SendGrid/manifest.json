@@ -1,0 +1,39 @@
+{
+  "description": "Tests SendGrid to validate that emails can be sent.",
+  "has_cleanup_tasks": false,
+  "logical_name": "sendgrid",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Sends an email using the v3 API.",
+      "logical_name": "SendEmail",
+      "name": "Send Email",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.sendgrid.com/api-reference/mail-send/mail-send"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "sendgrid",
+  "config_values": [
+    {
+      "description": "The API key to use.",
+      "required": true,
+      "name": "ApiKey",
+      "environment_variable_name": "METRIST_SENDGRID_API_KEY"
+    },
+    {
+      "description": "The from email address to use.",
+      "required": true,
+      "name": "FromEmail",
+      "environment_variable_name": "METRIST_SENDGRID_FROM_EMAIL"
+    },
+    {
+      "description": "The to email address to use.",
+      "required": true,
+      "name": "ToEmail",
+      "environment_variable_name": "METRIST_SENDGRID_TO_EMAIL"
+    }
+  ]
+}

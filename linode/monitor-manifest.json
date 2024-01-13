@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Linode.",
+  "logical_name": "linode",
+  "name": "Linode",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.linode.com/"
+}

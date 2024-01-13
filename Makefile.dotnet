@@ -1,0 +1,20 @@
+#
+#  Makefile fragments for .NET based monitors
+#
+
+compile:
+	dotnet build
+
+test:
+	dotnet test
+
+build:
+	dotnet publish -c Release -r linux-x64 --no-self-contained
+
+package: build
+	(cd bin/Release/net6.0/linux-x64/publish; \
+	zip -rv "$(BASE_DIR)/$(MONITOR_NAME)-$(VERSION)-linux-x64.zip" .)
+	echo "$(VERSION)" > $(BASE_DIR)/$(MONITOR_NAME)-latest$(QUALIFIER).txt
+
+clean::
+	rm -rf bin obj

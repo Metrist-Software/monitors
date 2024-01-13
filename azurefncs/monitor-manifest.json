@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure Functions service](https://azure.microsoft.com/products/functions/).",
+  "logical_name": "azurefncs",
+  "name": "Azure Functions",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

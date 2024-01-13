@@ -1,0 +1,2 @@
+pyinstaller==4.5.1
+snowflake-connector-python==2.5.1

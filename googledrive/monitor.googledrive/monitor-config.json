@@ -1,0 +1,23 @@
+{
+  "name": "googledrive",
+  "description": "Google Drive",
+  "tag": "saas",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "CreateDocsFile"
+    },
+    {
+      "name": "GetDocsFile"
+    },
+    {
+      "name": "DeleteDocsFile"
+    }
+  ],
+  "extra_config": {
+    "GoogleDriveAccountPrivateKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/googledrive/${AWS_BACKEND_REGION}/secrets#google_drive_private_key",
+    "GoogleDriveAccountEmail": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/googledrive/${AWS_BACKEND_REGION}/secrets#google_drive_service_email"
+  }
+}

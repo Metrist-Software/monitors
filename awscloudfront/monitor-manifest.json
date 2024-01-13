@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of a specific [AWS Cloudfront distribution](https://aws.amazon.com/cloudfront/).",
+  "logical_name": "awscloudfront",
+  "name": "AWS CloudFront",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

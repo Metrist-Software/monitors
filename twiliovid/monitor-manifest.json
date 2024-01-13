@@ -1,0 +1,9 @@
+{
+  "description": "Tests Twilio Video to validate that rooms can be joined.",
+  "logical_name": "twiliovid",
+  "name": "Twilio Video",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.twilio.com/"
+}

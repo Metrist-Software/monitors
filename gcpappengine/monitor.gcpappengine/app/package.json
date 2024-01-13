@@ -1,0 +1,14 @@
+{
+  "name": "gcpappengine-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "author": "",
+  "license": "ISC"
+}

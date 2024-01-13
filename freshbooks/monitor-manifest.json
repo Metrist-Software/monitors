@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Freshbooks.",
+  "logical_name": "freshbooks",
+  "name": "Freshbooks",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.freshbooks.com/"
+}

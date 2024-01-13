@@ -1,0 +1,27 @@
+{
+  "name": "awsrds",
+  "description": "AWS RDS (MySQL)",
+  "tag": "aws",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "CreateInstance"
+    },
+    {
+      "name": "PingInstance"
+    },
+    {
+      "name": "DestroyInstance"
+    }
+  ],
+  "extra_config": {
+    "Region":"@env@:${ORCHESTRATOR_REGION}",
+    "EnvironmentTag": "@env@:${ORCHESTRATOR_REGION}",
+    "AwsAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsrds/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+		"AwsSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsrds/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "SecurityGroupId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsrds/${ORCHESTRATOR_REGION}/secrets#vpc_security_group_id",
+    "SubnetGroupName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsrds/${ORCHESTRATOR_REGION}/secrets#db_subnet_group_name"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Tests Auth0 to validate that access tokens and branding can be retrieved.",
+  "logical_name": "authzero",
+  "name": "Auth0",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.auth0.com"
+}

@@ -1,0 +1,41 @@
+# Common code for monitors that contain
+# Terraform builds
+
+.PHONY: plan apply tfrun tfclean tfinit
+
+plan:
+	make ACTION=plan tfrun
+
+apply:
+	make ACTION=apply tfrun
+
+tfrun:
+	cd terraform/stacks/infra; \
+	  terraform ${ACTION} \
+	    -var environment_tag=${ENVIRONMENT_TAG} \
+	    -var orchestrator_region=${ORCHESTRATOR_REGION} \
+	    -var aws_backend_region=${AWS_BACKEND_REGION}
+
+tfclean:
+	cd terraform/stacks/infra; rm -rf .terraform .terraform.lock.hcl
+
+init: tfclean
+	@echo
+	@echo Initializing terraform with key: terraform/monitoring/${MONITOR_NAME}/${CLOUD_PLATFORM}/${ENVIRONMENT_TAG}/${ORCHESTRATOR_REGION}/infra.statefile
+	@echo
+	cd terraform/stacks/infra; terraform init -backend-config="key=terraform/monitoring/${MONITOR_NAME}/${CLOUD_PLATFORM}/${ENVIRONMENT_TAG}/${ORCHESTRATOR_REGION}/infra.statefile" -reconfigure
+
+clean::
+	rm -rf terraform/stacks/infra/.terraform*
+
+migrate_state:
+	@test -n "$(OLD_KEY)" || (echo 'OLD_KEY must be set. Exiting' && exit 1)
+
+	cd terraform/stacks/infra; \
+	terraform init -backend-config="key=$(OLD_KEY)" -reconfigure; \
+	terraform init -backend-config="key=terraform/monitoring/${MONITOR_NAME}/${CLOUD_PLATFORM}/${ENVIRONMENT_TAG}/${ORCHESTRATOR_REGION}/infra.statefile" -migrate-state
+
+	@read -p "Delete old state file? \(s3://cmtf-infra/$(OLD_KEY)\) [y/N] " ans && ans=$${ans:-N} ; \
+    if [ $${ans} = y ] || [ $${ans} = Y ]; then \
+        aws s3 rm s3://cmtf-infra/$(OLD_KEY) ; \
+    fi

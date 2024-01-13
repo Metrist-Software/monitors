@@ -1,0 +1,39 @@
+{
+  "description": "Monitor the availability of Okta's M2M authentication",
+  "has_cleanup_tasks": false,
+  "logical_name": "okta",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to obtain an access token using Client ID and Client Secret.",
+      "logical_name": "GetToken",
+      "name": "GetToken",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.okta.com/docs/guides/implement-grant-type/clientcreds/main/"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "okta",
+  "config_values": [
+    {
+      "description": "Okta domain to use.",
+      "required": true,
+      "name": "Domain",
+      "environment_variable_name": "METRIST_OKTA_DOMAIN"
+    },
+    {
+      "description": "The Client ID to use.",
+      "required": true,
+      "name": "ClientId",
+      "environment_variable_name": "METRIST_OKTA_CLIENT_ID"
+    },
+    {
+      "description": "The Client Secret to use.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_OKTA_CLIENT_SECRET"
+    }
+  ]
+}

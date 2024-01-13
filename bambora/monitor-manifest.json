@@ -1,0 +1,9 @@
+{
+  "description": "Tests Bambora to validate that purchases, refunds, and voids work with a test credit card.",
+  "logical_name": "bambora",
+  "name": "Bambora",
+  "groups": [
+    "api"
+  ],
+  "status_page_url": "https://status.na.bambora.com/"
+}

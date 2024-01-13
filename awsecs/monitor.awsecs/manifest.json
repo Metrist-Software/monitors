@@ -1,0 +1,89 @@
+{
+  "description": "Monitor the observability of a [AWS ECS services](https://aws.amazon.com/ecs/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "awsecs",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to create an ECS service.",
+      "logical_name": "CreateService",
+      "name": "Create Service",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to ping a load balancer by domain name.",
+      "logical_name": "PingService",
+      "name": "Ping Service",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to destroy the service created in an earlier step.",
+      "logical_name": "DestroyService",
+      "name": "Destroy Service",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awsecs",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_AWSECS_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_AWSECS_AWS_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "A load balancer DNS name to ping.",
+      "required": true,
+      "name": "AwsLbDnsName",
+      "environment_variable_name": "METRIST_AWSECS_AWS_LB_DNS_NAME"
+    },
+    {
+      "description": "The load balancer target group ARN to access from the load balancer.",
+      "required": true,
+      "name": "AwsLbTargetGroupArn",
+      "environment_variable_name": "METRIST_AWSECS_AWS_LB_TARGET_GROUP_ARN"
+    },
+    {
+      "description": "Full ARN of the task definition to run in your service.",
+      "required": true,
+      "name": "AwsTaskDefinitionArn",
+      "environment_variable_name": "METRIST_AWSECS_AWS_TASK_DEFINITION_ARN"
+    },
+    {
+      "description": "ID of the cluster hosted by Amazon ECS.",
+      "required": true,
+      "name": "ClusterId",
+      "environment_variable_name": "METRIST_AWSECS_CLUSTER_ID"
+    },
+    {
+      "description": "Any of the [supported regions](https://docs.aws.amazon.com/AmazonECS/latest/userguide/AWS_Fargate-Regions.html).",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AWSECS_REGION"
+    },
+    {
+      "description": "A security group ID relevant to this cluster.",
+      "required": true,
+      "name": "SecurityGroupId",
+      "environment_variable_name": "METRIST_AWSECS_SECURITY_GROUP_ID"
+    },
+    {
+      "description": "Comma-separated list of IDs of the subnets associated with the service.",
+      "required": true,
+      "name": "VpcPublicSubnets",
+      "environment_variable_name": "METRIST_AWSECS_VPC_PUBLIC_SUBNETS"
+    }
+  ]
+}

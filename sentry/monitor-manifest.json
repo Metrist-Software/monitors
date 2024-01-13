@@ -1,0 +1,9 @@
+{
+  "description": "Tests Sentry to validate events can be captured and that issues can be created, resolved, and deleted.",
+  "logical_name": "sentry",
+  "name": "Sentry",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.sentry.io/"
+}

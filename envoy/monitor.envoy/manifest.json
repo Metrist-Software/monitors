@@ -1,0 +1,34 @@
+{
+  "description": "Monitor the observability of [Envoy API](https://api.envoy.com/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "envoy",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to retrieve a list of employees.",
+      "logical_name": "GetEmployees",
+      "name": "GetEmployees",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve a list of reservations.",
+      "logical_name": "GetReservations",
+      "name": "GetReservations",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "envoy",
+  "config_values": [
+    {
+      "description": "An Envoy client API key.",
+      "required": true,
+      "name": "ClientApiKey",
+      "environment_variable_name": "METRIST_ENVOY_CLIENT_A_P_I_KEY"
+    }
+  ]
+}

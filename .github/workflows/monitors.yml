@@ -1,0 +1,83 @@
+
+name: Build and package monitors
+
+on:
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  validate-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate monitor manifests
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: |
+          cd manifest-validator
+          make test
+  setup:
+    runs-on: ubuntu-latest
+    needs:
+      - validate-manifests
+    outputs:
+      build-chunks: ${{ steps['set-build-chunks'].outputs['build-chunks'] }}
+      build-chunk-ids: ${{ steps['set-build-chunk-ids'].outputs['build-chunk-ids'] }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: set-build-chunks
+        name: Get build chunks
+        run: ./deploy/chunker.sh
+      - id: set-build-chunk-ids
+        name: Set Chunk IDs
+        run: echo "::set-output name=build-chunk-ids::$(echo $CHUNKS | jq -cM 'to_entries | map(.key)')"
+        env:
+          CHUNKS: ${{ steps['set-build-chunks'].outputs['build-chunks'] }}
+  build:
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+    permissions:
+      id-token: write
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: ${{ fromJson(needs.setup.outputs['build-chunk-ids']) }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: asdf-vm/actions/install@v1
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::147803588724:role/github-actions-shared-dist-writer
+          aws-region: us-west-2
+
+      - name: Deploy shared source code to S3
+        env:
+          BUCKET_NAME: ${{ secrets.SHARED_DIST_BUCKET_NAME }}
+          PUBLIC_BUCKET_NAME: ${{ secrets.PUBLIC_BUCKET_NAME }}
+          CHUNKS: ${{ needs.setup.outputs['build-chunks'] }}
+        run: |
+          echo $CHUNKS | jq '.[${{ matrix.chunk }}] | .[] | @text' | xargs --verbose deploy/package.sh
+
+  cloudfront-invalidation:
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::147803588724:role/github-actions-shared-dist-writer
+          aws-region: us-west-2
+
+      - name: Invalidate cloudfront
+        run: ./deploy/invalidate_cloudfront.sh

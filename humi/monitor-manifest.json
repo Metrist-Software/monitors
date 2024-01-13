@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Humi.",
+  "logical_name": "humi",
+  "name": "Humi",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.humi.ca/"
+}

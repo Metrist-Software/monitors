@@ -1,0 +1,8 @@
+{
+  "description": "Tests Google Maps to validate that directions and static images can be retrieved and that geocoding from a physical address works as expected.",
+  "logical_name": "gmaps",
+  "name": "Google Maps",
+  "groups": [
+    "saas"
+  ]
+}

@@ -1,0 +1,43 @@
+#
+#  Makefile fragments for NodeJS Typescript based monitors
+#
+
+compile: deps
+	npx tsc
+
+test:
+	npm run test
+
+build: compile
+	# Some browser-based monitors include a react app.
+	if [ -d reactapp ]; then (cd reactapp; npm ci; npm run build); else echo; fi
+
+package: clean build
+	if [ -d terraform ]; then rm -f terraform/stacks/*/{.terraform.lock.hcl,.terraform/terraform.tfstate}; else echo; fi
+	cp `asdf which node` node
+	echo '#!/usr/bin/env bash' >run.sh
+	echo 'exec ./node build/main.js' >>run.sh
+	chmod +x run.sh
+	tar cvf sfx.tar .
+	cat ../../sfx.header sfx.tar >$(MONITOR_NAME)
+	chmod +x $(MONITOR_NAME)
+	zip -9 $(MONITOR_NAME)-$(VERSION)-linux-x64.zip $(MONITOR_NAME)
+	echo "$(VERSION)" > $(BASE_DIR)/$(MONITOR_NAME)-latest$(QUALIFIER).txt
+
+deps:
+	npm ci
+
+clean::
+	rm -rf $(MONITOR_NAME) node_modules build node run.sh sfx.tar
+	if [ -d reactapp ]; then cd reactapp; rm -rf node_modules build; else echo; fi
+
+# Link/unlink the browser or protocol packages so you can
+# test changes locally. Note that you need to manually reshuffle
+# ordering of targets: `make deps link.browser test_run`.
+link.%:
+	cd ../npm_packages/@metrist/$*; npm link
+	npm link @metrist/$*
+
+unlink.%:
+	npm unlink @metrist/$*
+	npm i

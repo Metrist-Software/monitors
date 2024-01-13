@@ -1,0 +1,38 @@
+{
+  "name": "awsiam",
+  "description": "AWS IAM",
+  "tag": "aws",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "CreateUser"
+    },
+    {
+      "name": "CreateGroup"
+    },
+    {
+      "name": "AddUserToGroup"
+    },
+    {
+      "name": "RemoveUserFromGroup"
+    },
+    {
+      "name": "DeleteGroup"
+    },
+    {
+      "name": "AttachPolicy"
+    },
+    {
+      "name": "DetachPolicy"
+    },
+    {
+      "name": "DeleteUser"
+    }
+  ],
+  "extra_config": {
+    "AWSAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsiam/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+    "AWSSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsiam/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key"
+  }
+}

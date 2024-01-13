@@ -1,0 +1,9 @@
+{
+  "description": "Tests Stripe to validate that intents can be created and confirmed and that methods can be created.",
+  "logical_name": "stripe",
+  "name": "Stripe",
+  "groups": [
+    "api"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

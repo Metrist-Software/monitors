@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [AWS Simple Queue Service](https://aws.amazon.com/sqs/).",
+  "logical_name": "sqs",
+  "name": "AWS SQS",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

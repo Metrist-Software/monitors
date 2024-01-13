@@ -1,0 +1,20 @@
+{
+  "name": "neon",
+  "description": "Neon",
+  "tag": "saas",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "CreateBranch"
+    },
+    {
+      "name": "DeleteBranch"
+    }
+  ],
+  "extra_config": {
+    "ApiKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/neon#ApiKey",
+    "ProjectId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/neon#ProjectId",
+  }
+}

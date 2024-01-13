@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure Virtual Machine service](https://azure.microsoft.com/products/virtual-machines/).",
+  "logical_name": "azurevm",
+  "name": "Azure VM",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

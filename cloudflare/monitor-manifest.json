@@ -1,0 +1,9 @@
+{
+  "description": "Tests Cloudflare to validate that the CDN is active, that DNS entries can be looked up, and that it can be pinged.",
+  "logical_name": "cloudflare",
+  "name": "Cloudflare",
+  "groups": [
+    "infrastructure"
+  ],
+  "status_page_url": "https://www.cloudflarestatus.com/"
+}

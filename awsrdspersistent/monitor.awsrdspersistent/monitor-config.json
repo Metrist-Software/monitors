@@ -1,0 +1,21 @@
+{
+  "name": "awsrdspersistent",
+  "description": "AWS RDS Instance",
+  "tag": "aws",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "PingInstance"
+    }
+  ],
+  "extra_config": {
+    "dbname": "@secret@:@env@:/${ENVIRONMENT_TAG}/rds/projections-user#dbname",
+    "password": "@secret@:@env@:/${ENVIRONMENT_TAG}/rds/projections-user#password",
+    "user": "@secret@:@env@:/${ENVIRONMENT_TAG}/rds/projections-user#username",
+    "address": "@secret@:@env@:/${ENVIRONMENT_TAG}/rds/projections-user#host",
+    "engine": "@secret@:@env@:/${ENVIRONMENT_TAG}/rds/projections-user#engine",
+    "port": "@secret@:@env@:/${ENVIRONMENT_TAG}/rds/projections-user#port"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "description": "Monitor the observability of specific [AWS RDS Instance](https://aws.amazon.com/rds/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "awsrdspersistent",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to ping your postgres or mysql RDS instance.",
+      "logical_name": "PingInstance",
+      "name": "Ping Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awsrdspersistent",
+  "config_values": [
+    {
+      "description": "IP address or domain name of your RDS instance.",
+      "required": true,
+      "name": "Address",
+      "environment_variable_name": "METRIST_AWSRDSPERSISTENT_ADDRESS"
+    },
+    {
+      "description": "Name of your database.",
+      "required": true,
+      "name": "Dbname",
+      "environment_variable_name": "METRIST_AWSRDSPERSISTENT_DBNAME"
+    },
+    {
+      "description": "Use 'postgres' or 'mysql'. If undefined, the monitor will default to mysql. [Contact us to support other engines.](https://metrist.io/contact/)",
+      "required": false,
+      "name": "Engine",
+      "environment_variable_name": "METRIST_AWSRDSPERSISTENT_ENGINE"
+    },
+    {
+      "description": "Password to access your database.",
+      "required": true,
+      "name": "Password",
+      "environment_variable_name": "METRIST_AWSRDSPERSISTENT_PASSWORD"
+    },
+    {
+      "description": "Port number to access your database.",
+      "required": true,
+      "name": "Port",
+      "environment_variable_name": "METRIST_AWSRDSPERSISTENT_PORT"
+    },
+    {
+      "description": "Username to access your database.",
+      "required": true,
+      "name": "User",
+      "environment_variable_name": "METRIST_AWSRDSPERSISTENT_USER"
+    }
+  ]
+}

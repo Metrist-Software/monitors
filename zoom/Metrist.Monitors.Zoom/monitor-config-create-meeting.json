@@ -1,0 +1,25 @@
+{
+  "name": "zoom",
+  "description": "Zoom",
+  "tag": "saas", 
+  "interval_secs": 2700,
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "CreateMeeting"
+    },
+    {
+      "name": "GetMeeting"
+    },
+    {
+      "name": "DeleteMeeting"
+    }    
+  ],
+  "extra_config": {
+    "ApiKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#apiKey",
+    "ApiSecret": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#apiSecret",
+    "MeetingUserId": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#meetingUserId"
+  }
+}

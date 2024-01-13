@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure Cosmos Managed Databases](https://azure.microsoft.com/solutions/databases/).",
+  "logical_name": "azuredb",
+  "name": "Azure Cosmos DB",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

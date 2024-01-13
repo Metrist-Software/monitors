@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Metrist.Core\Metrist.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.EKS" Version="3.7.104.31" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.101.3" />
+    <PackageReference Include="KubernetesClient" Version="10.0.27" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <SelfContained>False</SelfContained>
+  </PropertyGroup>
+
+</Project>

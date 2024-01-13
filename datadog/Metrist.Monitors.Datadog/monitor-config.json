@@ -1,0 +1,21 @@
+{
+  "name": "datadog",
+  "description": "Datadog",
+  "tag": "saas",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "SubmitEvent"
+    },
+    {
+      "name": "GetEvent"
+    }
+  ],
+  "extra_config": {
+    "ApiKey": "@env@:@secret@:/${ENVIRONMENT_TAG}/datadog/credentials#apiKey",
+    "AppKey": "@env@:@secret@:/${ENVIRONMENT_TAG}/datadog/credentials#applicationKey",
+    "EnvironmentTagName": "${ENVIRONMENT_TAG}:${ORCHESTRATOR_REGION}"
+  }
+}

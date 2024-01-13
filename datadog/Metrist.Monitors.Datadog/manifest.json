@@ -1,0 +1,46 @@
+{
+  "description": "Tests Datadog to validate that events can be submitted and retrieved.",
+  "has_cleanup_tasks": false,
+  "logical_name": "datadog",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Posts an event using the v1 events API.",
+      "logical_name": "SubmitEvent",
+      "name": "Submit Event",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.datadoghq.com/api/latest/events/#post-an-event"
+    },
+    {
+      "description": "Gets the event using the v1 events API.",
+      "logical_name": "GetEvent",
+      "name": "Get Event",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.datadoghq.com/api/latest/events/#get-an-event"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "datadog",
+  "config_values": [
+    {
+      "description": "An environment tag to use when creating datadog events.",
+      "required": true,
+      "name": "EnvironmentTagName",
+      "environment_variable_name": "METRIST_DATADOG_ENVIRONMENT_TAG_NAME"
+    },
+    {
+      "description": "A datadog API key.",
+      "required": true,
+      "name": "ApiKey",
+      "environment_variable_name": "METRIST_DATADOG_API_KEY"
+    },
+    {
+      "description": "A datadog app key with permissions to create and retrieve events.",
+      "required": true,
+      "name": "AppKey",
+      "environment_variable_name": "METRIST_DATADOG_APP_KEY"
+    }
+  ]
+}

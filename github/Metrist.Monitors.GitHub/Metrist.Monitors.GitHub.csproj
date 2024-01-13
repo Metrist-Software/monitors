@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Metrist.Core\Metrist.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <PackageReference Include="LibGit2Sharp" Version="0.27.0-preview-0182" />
+      <PackageReference Include="Octokit" Version="5.0.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <SelfContained>False</SelfContained>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,99 @@
+{
+  "description": "Monitor the observability of a specific [AWS Cloudfront distribution](https://aws.amazon.com/cloudfront/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "awscloudfront",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to asynchronously put a file in an S3 bucket.",
+      "logical_name": "PublishFile",
+      "name": "Publish File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve the file created in the previous step.",
+      "logical_name": "GetNewFile",
+      "name": "Get New File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to update the file created in the previous step.",
+      "logical_name": "UpdateFile",
+      "name": "Update File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to purge items from the distribution.",
+      "logical_name": "PurgeFile",
+      "name": "Purge File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve a file updated in a previous step.",
+      "logical_name": "GetUpdatedFile",
+      "name": "Get Updated File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete the file created in a previous step.",
+      "logical_name": "DeleteFile",
+      "name": "Delete File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to confirm the DeleteFile step was successful.",
+      "logical_name": "WaitForDeletionPropagation",
+      "name": "WaitForDeletionPropagation",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awscloudfront",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AWSAccessKeyId",
+      "environment_variable_name": "METRIST_AWSCLOUDFRONT_A_W_S_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "required": true,
+      "name": "AWSRegion",
+      "environment_variable_name": "METRIST_AWSCLOUDFRONT_A_W_S_REGION"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AWSSecretAccessKey",
+      "environment_variable_name": "METRIST_AWSCLOUDFRONT_A_W_S_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "The name of your S3 bucket.",
+      "required": true,
+      "name": "BucketName",
+      "environment_variable_name": "METRIST_AWSCLOUDFRONT_BUCKET_NAME"
+    },
+    {
+      "description": "The CloudFront domain name needed when linking to your objects.",
+      "required": true,
+      "name": "DistributionDomainName",
+      "environment_variable_name": "METRIST_AWSCLOUDFRONT_DISTRIBUTION_DOMAIN_NAME"
+    },
+    {
+      "description": "The id assigned to the distribution.",
+      "required": true,
+      "name": "DistributionId",
+      "environment_variable_name": "METRIST_AWSCLOUDFRONT_DISTRIBUTION_ID"
+    }
+  ]
+}

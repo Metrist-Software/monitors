@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure DevOps Pipeslines service](https://azure.microsoft.com/products/devops/pipelines/).",
+  "logical_name": "azuredevopspipelines",
+  "name": "Azure DevOps Pipelines",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.dev.azure.com/"
+}

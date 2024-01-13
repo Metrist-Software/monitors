@@ -1,0 +1,8 @@
+{
+  "description": "Tests NuGet to validate that packages can be downloaded and have their versions listed.",
+  "logical_name": "nuget",
+  "name": "NuGet",
+  "groups": [
+    "saas"
+  ]
+}

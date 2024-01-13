@@ -1,0 +1,22 @@
+{
+  "name": "fastly",
+  "description": "fastly",
+  "tag": "api",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "PurgeCache"
+    },
+    {
+      "name": "GetNonCachedFile"
+    },
+    {
+      "name": "GetCachedFile"
+    }
+  ],
+  "extra_config": {
+    "RequestUri": "@env@:http://fastly-monitor.canarymonitor.com/fastly-${ENVIRONMENT_TAG}-${ORCHESTRATOR_REGION}.txt"
+  }
+}

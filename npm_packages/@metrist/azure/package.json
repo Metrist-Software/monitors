@@ -1,0 +1,22 @@
+{
+  "name": "@metrist/azure",
+  "version": "1.0.6",
+  "description": "Azure support for Metrist synthetic monitors written in NodeJS",
+  "author": "Metrist Software, Inc.",
+  "license": "Apache-2.0",
+  "main": "main.js",
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.276.0",
+    "@azure/identity": "^3.1.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.14.0",
+    "typescript": "^4.9.5",
+    "typescript-language-server": "^3.3.0"
+  }
+}

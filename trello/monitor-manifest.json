@@ -1,0 +1,9 @@
+{
+  "description": "Tests Trello to validate that cards can be created and deleted.",
+  "logical_name": "trello",
+  "name": "Trello",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://trello.status.atlassian.com/"
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Tests Heroku to validate that applications can be pinged, release webhooks are sent, and configurations can be updated.",
+  "logical_name": "heroku",
+  "name": "Heroku",
+  "groups": [
+    "infrastructure"
+  ],
+  "status_page_url": "https://status.hubspot.com/"
+}

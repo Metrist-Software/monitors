@@ -1,0 +1,65 @@
+{
+  "description": "Monitor the observability of the [AWS EC2 service](https://aws.amazon.com/ec2/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "ec2",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to launch an EC2 instance using the AMI for which you have permissions.",
+      "logical_name": "RunInstance",
+      "name": "Run Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html"
+    },
+    {
+      "description": "This step attempts to terminate the instance created in a previous step.",
+      "logical_name": "TerminateInstance",
+      "name": "Terminate Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"
+    },
+    {
+      "description": "This step attempts to retrieve description(s) of running instances.",
+      "logical_name": "DescribePersistentInstance",
+      "name": "Describe Persistent Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "ec2",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_EC2_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_EC2_AWS_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_EC2_REGION"
+    },
+    {
+      "description": "The ID of an Amazon Machine Image.",
+      "required": true,
+      "name": "AmiID",
+      "environment_variable_name": "METRIST_EC2_AMI_I_D"
+    },
+    {
+      "description": "The ID of a running instance.",
+      "required": true,
+      "name": "PersistentInstanceId",
+      "environment_variable_name": "METRIST_EC2_PERSISTENT_INSTANCE_ID"
+    }
+  ]
+}

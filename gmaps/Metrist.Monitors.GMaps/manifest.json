@@ -1,0 +1,41 @@
+{
+  "description": "Tests Google Maps to validate that directions and static images can be retrieved and that geocoding from a physical address works as expected.",
+  "has_cleanup_tasks": false,
+  "logical_name": "gmaps",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Gets directions.",
+      "logical_name": "GetDirections",
+      "name": "Get Directions",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets a static image.",
+      "logical_name": "GetStaticMapImage",
+      "name": "Get Static Map Image",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets gecoding from an address.",
+      "logical_name": "GetGeocodingFromAddress",
+      "name": "Get Geocoding From Address",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "gmaps",
+  "config_values": [
+    {
+      "description": "Google maps API key with access to Directions, Static Map Images, and Geocoding.",
+      "required": true,
+      "name": "ApiKey",
+      "environment_variable_name": "METRIST_GMAPS_API_KEY"
+    }
+  ]
+}

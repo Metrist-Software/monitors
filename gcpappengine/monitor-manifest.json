@@ -1,0 +1,9 @@
+{
+  "description": "Tests Google App Engine to validate that autoscaling, pinging an app, deployments, and migrating traffic are operational.",
+  "logical_name": "gcpappengine",
+  "name": "GCP App Engine",
+  "groups": [
+    "gcp"
+  ],
+  "status_page_url": "https://status.cloud.google.com/"
+}

@@ -1,0 +1,52 @@
+{
+  "description": "Tests the GCP GKE service to validate that deployments can be created and removed.",
+  "has_cleanup_tasks": false,
+  "logical_name": "gke",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Creates a deployment.",
+      "logical_name": "CreateDeployment",
+      "name": "Create Deployment",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Removes a deployment.",
+      "logical_name": "RemoveDeployment",
+      "name": "Remove Deployment",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "gke",
+  "config_values": [
+    {
+      "description": "Base64 encoded credentials for GKE operations.",
+      "required": true,
+      "name": "Base64Keyfile",
+      "environment_variable_name": "METRIST_GKE_BASE64_KEYFILE"
+    },
+    {
+      "description": "Address of Kubernetes cluster.",
+      "required": true,
+      "name": "ClusterServer",
+      "environment_variable_name": "METRIST_GKE_CLUSTER_SERVER"
+    },
+    {
+      "description": "PEM-encoded certificate authority certificates.",
+      "required": true,
+      "name": "ClusterCertAuthData",
+      "environment_variable_name": "METRIST_GKE_CLUSTER_CERT_AUTH_DATA"
+    },
+    {
+      "description": "Namespace in which to create deployments. Uses 'default' if not supplied.",
+      "required": false,
+      "name": "Namespace",
+      "environment_variable_name": "METRIST_GKE_NAMESPACE"
+    }
+  ]
+}

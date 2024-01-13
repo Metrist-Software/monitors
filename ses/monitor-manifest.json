@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [AWS Simple Email Service](https://aws.amazon.com/ses/).",
+  "logical_name": "ses",
+  "name": "AWS SES",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

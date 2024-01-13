@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [AWS Identity and Access Management service](https://aws.amazon.com/iam/).",
+  "logical_name": "awsiam",
+  "name": "AWS Identity and Access Management",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

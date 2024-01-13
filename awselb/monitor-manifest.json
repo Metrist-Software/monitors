@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [AWS ELB service](https://aws.amazon.com/elasticloadbalancing/).",
+  "logical_name": "awselb",
+  "name": "AWS Elastic Load Balancing",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

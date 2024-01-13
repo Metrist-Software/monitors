@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Ruby Gems.",
+  "logical_name": "rubygemsorg",
+  "name": "Ruby Gems",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.rubygems.org/"
+}

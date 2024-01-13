@@ -1,0 +1,45 @@
+{
+  "description": "Tests Zoom to validate that rooms can be joined.",
+  "has_cleanup_tasks": false,
+  "logical_name": "zoom",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "Joins a call using the Zoom client and a headless Chrome browser.",
+      "logical_name": "JoinCall",
+      "name": "Join Call",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "zoomclient",
+  "config_values": [
+    {
+      "description": "The SDK key to use.",
+      "required": true,
+      "name": "SdkKey",
+      "environment_variable_name": "METRIST_ZOOM_SDK_KEY"
+    },
+    {
+      "description": "The SDK secret to use.",
+      "required": true,
+      "name": "SdkSecret",
+      "environment_variable_name": "METRIST_ZOOM_SDK_SECRET"
+    },
+    {
+      "description": "The meeting number to use.",
+      "required": true,
+      "name": "MeetingNumber",
+      "environment_variable_name": "METRIST_ZOOM_MEETING_NUMBER"
+    },
+    {
+      "description": "The meeting password to use.",
+      "required": true,
+      "name": "MeetingPassword",
+      "environment_variable_name": "METRIST_ZOOM_MEETING_PASSWORD"
+    }
+  ]
+}

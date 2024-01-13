@@ -1,0 +1,22 @@
+{
+  "name": "sqs",
+  "description": "AWS SQS",
+  "tag": "aws",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "WriteMessage"
+    },
+    {
+      "name": "ReadMessage"
+    }
+  ],
+  "extra_config": {
+    "AwsAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/sqs/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+		"AwsSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/sqs/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "QueueUrl": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/sqs/${ORCHESTRATOR_REGION}/secrets#queue_url",
+    "Region":"@env@:${ORCHESTRATOR_REGION}"
+  }
+}

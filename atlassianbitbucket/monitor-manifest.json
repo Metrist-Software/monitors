@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Atlassian Bitbucket .",
+  "logical_name": "atlassianbitbucket",
+  "name": "Atlassian Bitbucket ",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://bitbucket.status.atlassian.com/"
+}

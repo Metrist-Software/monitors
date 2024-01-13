@@ -1,0 +1,9 @@
+{
+  "description": "Tests NPM to validate that packages can be downloaded and have their metadata retrieved.",
+  "logical_name": "npm",
+  "name": "NPM",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.npmjs.org/"
+}

@@ -1,0 +1,8 @@
+{
+  "description": "Tests Braintree to validate that sandbox transactions can be submitted.",
+  "logical_name": "braintree",
+  "name": "Braintree",
+  "groups": [
+    "api"
+  ]
+}

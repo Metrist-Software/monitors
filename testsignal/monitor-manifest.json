@@ -1,0 +1,8 @@
+{
+  "description": "  This monitor just sends a test signal through the system so we can verify that things are correctly working. Two checks generate random numbers from a Poisson and Normal distribution; the third always returns zero so we can measure monitor invocation overhead.",
+  "logical_name": "testsignal",
+  "name": "Test Signal",
+  "groups": [
+    "other"
+  ]
+}

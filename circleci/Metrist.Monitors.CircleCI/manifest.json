@@ -1,0 +1,47 @@
+{
+  "description": "Tests CircleCI to validate that Docker and machine workflows can be run and that pipelines can be started.",
+  "has_cleanup_tasks": false,
+  "logical_name": "circleci",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Starts a pipeline.",
+      "logical_name": "StartPipeline",
+      "name": "Start Pipeline",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Runs a Docker workflow.",
+      "logical_name": "RunMonitorDockerWorkflow",
+      "name": "Run Monitor Docker Workflow",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Runs a machine workflow.",
+      "logical_name": "RunMonitorMachineWorkflow",
+      "name": "Run Monitor Machine Workflow",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "circleci",
+  "config_values": [
+    {
+      "description": "The API Token for the account that contains the pipeline & workflows to run.",
+      "required": true,
+      "name": "ApiToken",
+      "environment_variable_name": "METRIST_CIRCLECI_API_TOKEN"
+    },
+    {
+      "description": "The slug of the project that contains the MonitorMachine and MonitorDocker workflows.",
+      "required": true,
+      "name": "ProjectSlug",
+      "environment_variable_name": "METRIST_CIRCLECI_PROJECT_SLUG"
+    }
+  ]
+}

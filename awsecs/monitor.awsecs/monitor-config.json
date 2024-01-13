@@ -1,0 +1,34 @@
+{
+  "name": "awsecs",
+  "description": "AWS ECS",
+  "tag": "aws",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "CreateService",
+      "description": "Create AWS ECS using the Create ECS API call"
+    },
+    {
+      "name": "PingService",
+      "description": "Ping AWS ECS using the Ping ECS API call"
+    },
+    {
+      "name": "DestroyService",
+      "description": "Destroy AWS ECS using the Destroy ECS API call"
+    }
+  ],
+  "extra_config": {
+    "Region":"@env@:${ORCHESTRATOR_REGION}",
+    "EnvironmentTag": "@env@:${ORCHESTRATOR_REGION}",
+    "AwsAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsecs/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+		"AwsSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsecs/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "SecurityGroupId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsecs/${ORCHESTRATOR_REGION}/secrets#vpc_security_group_id",
+		"ClusterId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsecs/${ORCHESTRATOR_REGION}/secrets#aws_ecs_cluster_id",
+	  "VpcPublicSubnets": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsecs/${ORCHESTRATOR_REGION}/secrets#aws_ecs_vpc_public_subnets",
+		"AwsLbTargetGroupArn": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsecs/${ORCHESTRATOR_REGION}/secrets#aws_ecs_lb_target_group_arn",
+		"AwsTaskDefinitionArn": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsecs/${ORCHESTRATOR_REGION}/secrets#aws_ecs_task_definition_arn",
+	  "AwsLbDnsName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsecs/${ORCHESTRATOR_REGION}/secrets#aws_ecs_lb_dns_name"
+  }
+}

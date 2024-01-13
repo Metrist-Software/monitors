@@ -1,0 +1,52 @@
+{
+  "description": "Monitor the observability of [AWS Simple Queue Service](https://aws.amazon.com/sqs/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "sqs",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to write a message to a queue.",
+      "logical_name": "WriteMessage",
+      "name": "Write Message",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve a message created in a previous step.",
+      "logical_name": "ReadMessage",
+      "name": "Read Message",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "sqs",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key ID.",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_SQS_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS secret access key.",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_SQS_AWS_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "The SQS Queue URL to or from which messages will be written or read.",
+      "required": true,
+      "name": "QueueUrl",
+      "environment_variable_name": "METRIST_SQS_QUEUE_URL"
+    },
+    {
+      "description": "The region to use.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_SQS_REGION"
+    }
+  ]
+}

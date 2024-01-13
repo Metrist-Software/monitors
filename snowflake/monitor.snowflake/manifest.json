@@ -1,0 +1,62 @@
+{
+  "description": "Tests Snowflake to validate that databases, tables, and data can be created and deleted.",
+  "has_cleanup_tasks": true,
+  "logical_name": "snowflake",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "Creates a database.",
+      "logical_name": "CreateDatabase",
+      "name": "CreateDatabase",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Creates a table in the database.",
+      "logical_name": "CreateTable",
+      "name": "CreateTable",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Puts a file into the table.",
+      "logical_name": "PutFile",
+      "name": "PutFile",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets data from the table.",
+      "logical_name": "GetData",
+      "name": "GetData",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Deletes data from the table.",
+      "logical_name": "DeleteData",
+      "name": "DeleteData",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Drops the table.",
+      "logical_name": "DropTable",
+      "name": "DropTable",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Drops the database.",
+      "logical_name": "DropDatabase",
+      "name": "DropDatabase",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "snowflake",
+  "config_values": []
+}

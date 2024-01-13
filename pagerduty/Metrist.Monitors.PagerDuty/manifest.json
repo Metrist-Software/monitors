@@ -1,0 +1,60 @@
+{
+  "description": "Tests PagerDuty to validate that events can be submitted, that incidents can be created, retrieved, and resolved, and that webhooks are sent.",
+  "has_cleanup_tasks": true,
+  "logical_name": "pagerduty",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Submits a trigger event to the v2 events API.",
+      "logical_name": "CreateIncident",
+      "name": "Create Incident",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.pagerduty.com/api-reference/b3A6Mjc0ODI2Nw-send-an-event-to-pager-duty"
+    },
+    {
+      "description": "Polls for incidents using the REST API until the submitted event results in an incident.",
+      "logical_name": "CheckForIncident",
+      "name": "Check For Incident",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.pagerduty.com/api-reference/b3A6Mjc0ODEzOA-list-incidents"
+    },
+    {
+      "description": "Waits for PagerDuty to send a webhook for the resulting incident.",
+      "logical_name": "ReceiveWebhook",
+      "name": "Receive Webhook",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview"
+    },
+    {
+      "description": "Submits a resolve event for the incident using the v2 events API.",
+      "logical_name": "ResolveIncident",
+      "name": "Resolve Incident",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.pagerduty.com/api-reference/b3A6Mjc0ODI2Nw-send-an-event-to-pager-duty"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "pagerduty",
+  "config_values": [
+    {
+      "description": "The routing key to use.",
+      "required": true,
+      "name": "RoutingKey",
+      "environment_variable_name": "METRIST_PAGERDUTY_ROUTING_KEY"
+    },
+    {
+      "description": "The API token to use.",
+      "required": true,
+      "name": "ApiToken",
+      "environment_variable_name": "METRIST_PAGERDUTY_API_TOKEN"
+    },
+    {
+      "description": "The service ID of the service to use.",
+      "required": true,
+      "name": "ServiceId",
+      "environment_variable_name": "METRIST_PAGERDUTY_SERVICE_ID"
+    }
+  ]
+}

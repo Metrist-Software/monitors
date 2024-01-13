@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Envoy API](https://api.envoy.com/).",
+  "logical_name": "envoy",
+  "name": "Envoy",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.envoy.com/"
+}

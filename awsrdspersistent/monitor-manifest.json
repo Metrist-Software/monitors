@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of specific [AWS RDS Instance](https://aws.amazon.com/rds/).",
+  "logical_name": "awsrdspersistent",
+  "name": "AWS RDS Instance",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

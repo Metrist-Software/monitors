@@ -1,0 +1,9 @@
+{
+  "description": "Tests the GCP GKE service to validate that deployments can be created and removed.",
+  "logical_name": "gke",
+  "name": "GCP GKE",
+  "groups": [
+    "gcp"
+  ],
+  "status_page_url": "https://status.cloud.google.com/"
+}

@@ -1,0 +1,41 @@
+{
+  "description": "Tests Fastly to validate that non-cached and cached files can be retrieved and that caches can be purged.",
+  "has_cleanup_tasks": false,
+  "logical_name": "fastly",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Purges a cache.",
+      "logical_name": "PurgeCache",
+      "name": "Purge Cache",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets a non-cached file.",
+      "logical_name": "GetNonCachedFile",
+      "name": "Get Non-Cached File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets a cached file.",
+      "logical_name": "GetCachedFile",
+      "name": "Get Cached File",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "fastly",
+  "config_values": [
+    {
+      "description": "A URL to the fastly file to operate on.",
+      "required": true,
+      "name": "RequestUri",
+      "environment_variable_name": "METRIST_FASTLY_REQUEST_URI"
+    }
+  ]
+}

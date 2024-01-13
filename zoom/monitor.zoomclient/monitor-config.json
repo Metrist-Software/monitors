@@ -1,0 +1,22 @@
+{
+  "name": "zoom",
+  "description": "Zoom",
+  "tag": "saas",
+  "interval_secs": 600,
+  "run_spec": {
+    "name": "zoomclient",
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "JoinCall",
+      "description": "Joins a call using the Zoom client and a headless Chrome browser."
+    }
+  ],
+  "extra_config": {
+    "sdkKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#sdkKey",
+    "sdkSecret": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#sdkSecret",
+    "MeetingNumber": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#meetingNumber",
+    "MeetingPassword": "@secret@:@env@:/${ENVIRONMENT_TAG}/zoom/api-token#meetingPassword"
+  }
+}

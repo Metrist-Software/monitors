@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [AWS Lambda](https://aws.amazon.com/lambda/).",
+  "logical_name": "awslambda",
+  "name": "AWS Lambda",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

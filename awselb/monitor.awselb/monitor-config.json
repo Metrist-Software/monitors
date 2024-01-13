@@ -1,0 +1,22 @@
+{
+  "name": "awselb",
+  "description": "AWS Elastic Load Balancer",
+  "tag": "aws",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "ChangeTargetGroup",
+      "description": "Change an ELB target group and measure how long it takes for the change to become effective"
+    }
+  ],
+  "extra_config": {
+    "AWSAccessKeyID": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awselb/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+		"AWSSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awselb/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "DnsName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awselb/${ORCHESTRATOR_REGION}/secrets#aws_elb_dns_name",
+    "TargetGroupArn": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awselb/${ORCHESTRATOR_REGION}/secrets#aws_elb_target_group_arn",
+    "ServiceId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awselb/${ORCHESTRATOR_REGION}/secrets#aws_ecs_service_id",
+    "ClusterId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awselb/${ORCHESTRATOR_REGION}/secrets#aws_ecs_cluster_id"
+  }
+}

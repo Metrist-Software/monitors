@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure Monitor service](https://azure.microsoft.com/products/monitor/).",
+  "logical_name": "azuremonitor",
+  "name": "Azure Monitor",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.azure.com/en-us/status"
+}

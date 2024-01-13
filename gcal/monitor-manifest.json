@@ -1,0 +1,8 @@
+{
+  "description": "Tests Google Calendar to validate that events can be created, retrieved, and deleted.",
+  "logical_name": "gcal",
+  "name": "Google Calendar",
+  "groups": [
+    "saas"
+  ]
+}

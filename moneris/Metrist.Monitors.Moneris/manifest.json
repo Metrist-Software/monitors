@@ -1,0 +1,40 @@
+{
+  "description": "Tests Moneris to validate that purchases and refunds work with a test credit card.",
+  "has_cleanup_tasks": false,
+  "logical_name": "moneris",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Attempts a test purchase.",
+      "logical_name": "TestPurchase",
+      "name": "Test Purchase",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Attempts a test refund.",
+      "logical_name": "TestRefund",
+      "name": "Test Refund",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "moneris",
+  "config_values": [
+    {
+      "description": "The store ID of the store to use.",
+      "required": true,
+      "name": "StoreId",
+      "environment_variable_name": "METRIST_MONERIS_STORE_ID"
+    },
+    {
+      "description": "The API token to use.",
+      "required": true,
+      "name": "ApiToken",
+      "environment_variable_name": "METRIST_MONERIS_API_TOKEN"
+    }
+  ]
+}

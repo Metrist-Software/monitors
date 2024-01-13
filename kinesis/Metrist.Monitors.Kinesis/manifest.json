@@ -1,0 +1,52 @@
+{
+  "description": "Monitor the observability of [Amazon Kinesis](https://aws.amazon.com/kinesis/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "kinesis",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to write streaming data using the PutRecordRequest class.",
+      "logical_name": "WriteToStream",
+      "name": "Write To Stream",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to read data from the stream created in a previous step.",
+      "logical_name": "ReadFromStream",
+      "name": "Read From Stream",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "kinesis",
+  "config_values": [
+    {
+      "description": "Your AWS access key ID",
+      "required": true,
+      "name": "AwsAccessKeyId",
+      "environment_variable_name": "METRIST_KINESIS_AWS_ACCESS_KEY_ID"
+    },
+    {
+      "description": "The AWS region to use",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_KINESIS_REGION"
+    },
+    {
+      "description": "Your AWS secret access key",
+      "required": true,
+      "name": "AwsSecretAccessKey",
+      "environment_variable_name": "METRIST_KINESIS_AWS_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "A name to apply to a Kinesis stream",
+      "required": true,
+      "name": "StreamName",
+      "environment_variable_name": "METRIST_KINESIS_STREAM_NAME"
+    }
+  ]
+}

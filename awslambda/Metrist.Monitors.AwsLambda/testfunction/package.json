@@ -1,0 +1,14 @@
+{
+  "name": "lambdamonitortestfunction",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.71",
+    "@types/node": "^18.11.0",
+    "aws-sdk": "^2.839.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Discord.",
+  "logical_name": "discord",
+  "name": "Discord",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://discordstatus.com/"
+}

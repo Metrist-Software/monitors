@@ -1,0 +1,85 @@
+{
+  "description": "Tests the Azure Blob Storage service to validate that blobs can be added, deleted, and retrieved, and that containers and storage accounts can be created.",
+  "has_cleanup_tasks": true,
+  "logical_name": "azureblob",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Creates a storage account.",
+      "logical_name": "CreateStorageAccount",
+      "name": "Create Storage Account",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Creates a container.",
+      "logical_name": "CreateContainer",
+      "name": "Create Container",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Creates a blob in the container.",
+      "logical_name": "CreateBlob",
+      "name": "Create Blob",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets the blob from the container.",
+      "logical_name": "GetBlob",
+      "name": "Get Blob",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Deletes the blob from the container.",
+      "logical_name": "DeleteBlob",
+      "name": "Delete Blob",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azureblob",
+  "config_values": [
+    {
+      "description": "The domain name associated with users in your Active Directory. Example: metrist.io.",
+      "required": true,
+      "name": "Domain",
+      "environment_variable_name": "METRIST_AZUREBLOB_DOMAIN"
+    },
+    {
+      "description": "The client ID is the unique Application (client) ID assigned to your app by Azure AD when the app was registered. You can find the Application (Client) ID in your Azure subscription by Azure AD => Enterprise applications => Application ID.",
+      "required": true,
+      "name": "ClientID",
+      "environment_variable_name": "METRIST_AZUREBLOB_CLIENT_I_D"
+    },
+    {
+      "description": "Secret string previously shared with AAD at application registration to prove the identity of the application (the client) requesting the tokens.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_AZUREBLOB_CLIENT_SECRET"
+    },
+    {
+      "description": "Tenant ID of the Azure AD tenant or a domain associated with this Azure AD tenant, in order to sign-in a user of a specific organization only.",
+      "required": true,
+      "name": "TenantID",
+      "environment_variable_name": "METRIST_AZUREBLOB_TENANT_I_D"
+    },
+    {
+      "description": "The Azure subscription ID to use.",
+      "required": true,
+      "name": "SubscriptionID",
+      "environment_variable_name": "METRIST_AZUREBLOB_TENANT_I_D"
+    },
+    {
+      "description": "A valid Azure region.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AZUREBLOB_REGION"
+    }
+  ]
+}

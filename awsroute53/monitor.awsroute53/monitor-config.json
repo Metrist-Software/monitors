@@ -1,0 +1,34 @@
+{
+  "name": "awsroute53",
+  "description": "AWS Route53",
+  "tag": "aws",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "QueryExistingDNSRecord",
+      "description": "Query an existing DNS record on Route53 via DNS Lookup"
+    },
+    {
+      "name": "QueryExistingDNSRecordAPI",
+      "description": "Query an existing DNS record on Route53 via the AWS SDK for JavaScript v3"
+    },
+    {
+      "name": "CreateDNSRecord",
+      "description": "Create a DNS A record on Route53 via the AWS SDK for JavaScript v3"
+    },
+    {
+      "name": "RemoveDNSRecord",
+      "description": "Remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3"
+    }
+  ],
+  "extra_config": {
+    "AWSAccessKeyID": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsroute53/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+    "AWSSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsroute53/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "PersistentRecordName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsroute53/${ORCHESTRATOR_REGION}/secrets#persistent_record_name",
+    "HostedZoneID": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsroute53/${ORCHESTRATOR_REGION}/secrets#hosted_zone_id",
+    "HostedZoneNS": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsroute53/${ORCHESTRATOR_REGION}/secrets#hosted_zone_ns",
+    "HostedZoneName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awsroute53/${ORCHESTRATOR_REGION}/secrets#hosted_zone_name"
+  }
+}

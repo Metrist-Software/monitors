@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Azure DevOps Artifacts](https://azure.microsoft.com/products/devops/artifacts/).",
+  "logical_name": "azuredevopsartifacts",
+  "name": "Azure DevOps Artifacts",
+  "groups": [
+    "azure"
+  ],
+  "status_page_url": "https://status.dev.azure.com/"
+}

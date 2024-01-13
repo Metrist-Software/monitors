@@ -1,0 +1,9 @@
+{
+  "description": "Tests PagerDuty to validate that events can be submitted, that incidents can be created, retrieved, and resolved, and that webhooks are sent.",
+  "logical_name": "pagerduty",
+  "name": "PagerDuty",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.pagerduty.com/"
+}

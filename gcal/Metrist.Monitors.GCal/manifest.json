@@ -1,0 +1,47 @@
+{
+  "description": "Tests Google Calendar to validate that events can be created, retrieved, and deleted.",
+  "has_cleanup_tasks": false,
+  "logical_name": "gcal",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Creates an event.",
+      "logical_name": "CreateEvent",
+      "name": "Create Event",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Gets an event.",
+      "logical_name": "GetEvent",
+      "name": "Get Event",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Deletes an event.",
+      "logical_name": "DeleteEvent",
+      "name": "Delete Event",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "gcal",
+  "config_values": [
+    {
+      "description": "A calendar to operate on.",
+      "required": true,
+      "name": "CalendarName",
+      "environment_variable_name": "METRIST_GCAL_CALENDAR_NAME"
+    },
+    {
+      "description": "Base64 encoded user credentials that are allowed to create/retrieve/delete events on the specified calendar.",
+      "required": true,
+      "name": "Base64Credentials",
+      "environment_variable_name": "METRIST_GCAL_CALENDAR_NAME"
+    }
+  ]
+}

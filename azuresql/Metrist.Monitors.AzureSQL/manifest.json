@@ -1,0 +1,113 @@
+{
+  "description": "Monitor the observability of [Azure SQL database service](https://azure.microsoft.com/products/azure-sql).",
+  "has_cleanup_tasks": true,
+  "logical_name": "azuresql",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to track a known type of event.",
+      "logical_name": "TrackEvent",
+      "name": "Track Event",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to create a SQL server on the given tenant.",
+      "logical_name": "CreateSqlServer",
+      "name": "Create SQL Server",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to create a database in a SQL server created in a previous step.",
+      "logical_name": "CreateDatabase",
+      "name": "Create Database",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to create a table in a database created in a previous step.",
+      "logical_name": "CreateTable",
+      "name": "Create Table",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to insert an item in a table created in a previous step.",
+      "logical_name": "InsertItem",
+      "name": "Insert Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve an item inserted in a previous step.",
+      "logical_name": "GetItem",
+      "name": "Get Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete an item inserted in a previous step.",
+      "logical_name": "DeleteItem",
+      "name": "Delete Item",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete a database created in a previous step.",
+      "logical_name": "DeleteDatabase",
+      "name": "Delete Database",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to delete a server created in a previous step.",
+      "logical_name": "DeleteServer",
+      "name": "Delete Server",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azuresql",
+  "config_values": [
+    {
+      "description": "The client ID is the unique Application (client) ID assigned to your app by Azure AD when the app was registered.",
+      "required": true,
+      "name": "ClientID",
+      "environment_variable_name": "METRIST_AZURESQL_CLIENT_I_D"
+    },
+    {
+      "description": "Secret string previously shared with AAD at application registration to prove the identity of the application (the client) requesting the tokens.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_AZURESQL_CLIENT_SECRET"
+    },
+    {
+      "description": "The name of an Azure Region.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AZURESQL_REGION"
+    },
+    {
+      "description": "A GUID that identifies a subscription and underlying services.",
+      "required": true,
+      "name": "SubscriptionID",
+      "environment_variable_name": "METRIST_AZURESQL_SUBSCRIPTION_I_D"
+    },
+    {
+      "description": "A unique identifier of the Active Directory instance.",
+      "required": true,
+      "name": "TenantID",
+      "environment_variable_name": "METRIST_AZURESQL_TENANT_I_D"
+    },
+    {
+      "description": "A valid Azure region.",
+      "required": true,
+      "name": "Region",
+      "environment_variable_name": "METRIST_AZURESQL_REGION"
+    }
+  ]
+}

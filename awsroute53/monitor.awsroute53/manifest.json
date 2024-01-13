@@ -1,0 +1,84 @@
+{
+  "description": "Monitor the observability of [AWS Route53 service](https://aws.amazon.com/route53/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "awsroute53",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to query an existing record on Route53 via DNS Lookup.",
+      "logical_name": "QueryExistingDNSRecord",
+      "name": "Query Existing DNS Record",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://nodejs.org/api/dns.html#dnsresolvehostname-rrtype-callback"
+    },
+    {
+      "description": "This step attempts to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3.",
+      "logical_name": "QueryExistingDNSRecordAPI",
+      "name": "Query Existing DNS Record Api",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-route-53/classes/listresourcerecordsetscommand.html"
+    },
+    {
+      "description": "This step attempts to create a DNS A record on Route53 via the AWS SDK for JavaScript v3.",
+      "logical_name": "CreateDNSRecord",
+      "name": "Create DNS Record",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-route-53/classes/changeresourcerecordsetscommand.html"
+    },
+    {
+      "description": "This step attempts to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3.",
+      "logical_name": "RemoveDNSRecord",
+      "name": "Remove DNS Record",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-route-53/classes/changeresourcerecordsetscommand.html"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awsroute53",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AWSAccessKeyId",
+      "environment_variable_name": "METRIST_AWSROUTE53_A_W_S_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AWSSecretAccessKey",
+      "environment_variable_name": "METRIST_AWSROUTE53_A_W_S_SECRET_ACCESS_KEY"
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "required": true,
+      "name": "AWSRegion",
+      "environment_variable_name": "METRIST_AWSROUTE53_A_W_S_REGION"
+    },
+    {
+      "description": "The ID of one of your hosted zones.",
+      "required": true,
+      "name": "HostedZoneId",
+      "environment_variable_name": "METRIST_AWSROUTE53_HOSTED_ZONE_ID"
+    },
+    {
+      "description": "The hosted zone name associated with the given zone ID.",
+      "required": true,
+      "name": "HostedZoneName",
+      "environment_variable_name": "METRIST_AWSROUTE53_HOSTED_ZONE_NAME"
+    },
+    {
+      "description": "One or more (as a comma-separated list) name servers associated with the given zone ID.",
+      "required": true,
+      "name": "HostedZoneNs",
+      "environment_variable_name": "METRIST_AWSROUTE53_HOSTED_ZONE_NS"
+    },
+    {
+      "description": "The name of an existing DNS record to query.",
+      "required": true,
+      "name": "PersistentRecordName",
+      "environment_variable_name": "METRIST_AWSROUTE53_PERSISTENT_RECORD_NAME"
+    }
+  ]
+}

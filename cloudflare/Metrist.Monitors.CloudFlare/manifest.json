@@ -1,0 +1,41 @@
+{
+  "description": "Tests Cloudflare to validate that the CDN is active, that DNS entries can be looked up, and that it can be pinged.",
+  "has_cleanup_tasks": false,
+  "logical_name": "cloudflare",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Pings by requesting https://1.1.1.1/favicon.ico.",
+      "logical_name": "Ping",
+      "name": "Ping",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Performs a DNS lookup.",
+      "logical_name": "DNSLookup",
+      "name": "DNS Lookup",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Requests an asset from the CDN.",
+      "logical_name": "CDN",
+      "name": "CDN",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "cloudflare",
+  "config_values": [
+    {
+      "description": "The URL to use for the CDN check (defaults to https://www.cloudflare.com if not specified).",
+      "required": false,
+      "name": "CdnCheckUrl",
+      "environment_variable_name": "METRIST_CLOUDFLARE_CDN_CHECK_URL"
+    }
+  ]
+}

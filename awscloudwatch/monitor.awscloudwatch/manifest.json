@@ -1,0 +1,40 @@
+{
+  "description": "Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).",
+  "has_cleanup_tasks": false,
+  "logical_name": "awscloudwatch",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to submit a metric using PutMetricData API call.",
+      "logical_name": "SubmitEvent",
+      "name": "Submit Event",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Using ListMetricsCommand API call, this step attempts to retrieve a list of metrics matching the event submitted in a previous step.",
+      "logical_name": "GetEvent",
+      "name": "Get Event",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "awscloudwatch",
+  "config_values": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "required": true,
+      "name": "AWSAccessKeyId",
+      "environment_variable_name": "METRIST_AWSCLOUDWATCH_A_W_S_ACCESS_KEY_ID"
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "required": true,
+      "name": "AWSSecretAccessKey",
+      "environment_variable_name": "METRIST_AWSCLOUDWATCH_A_W_S_SECRET_ACCESS_KEY"
+    }
+  ]
+}

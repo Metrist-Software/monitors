@@ -1,0 +1,78 @@
+{
+  "description": "Monitor the observability of [Azure Virtual Machine service](https://azure.microsoft.com/products/virtual-machines/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "azurevm",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to create a virtual machine instance.",
+      "logical_name": "CreateInstance",
+      "name": "Create Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to run a virtual machine instance created in a previous step.",
+      "logical_name": "RunInstance",
+      "name": "Run Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to terminate a virtual machine instance created in a previous step.",
+      "logical_name": "TerminateInstance",
+      "name": "Terminate Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to retrieve information about a persistent virtual machine instance.",
+      "logical_name": "DescribePersistentInstance",
+      "name": "Describe Persistent Instance",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azurevm",
+  "config_values": [
+    {
+      "description": "An Active Directory application Id.",
+      "required": true,
+      "name": "ClientID",
+      "environment_variable_name": "METRIST_AZUREVM_CLIENT_I_D"
+    },
+    {
+      "description": "A client secret associated with the application Id.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_AZUREVM_CLIENT_SECRET"
+    },
+    {
+      "description": "The name of a persistent VM instance.",
+      "required": true,
+      "name": "PersistentInstanceName",
+      "environment_variable_name": "METRIST_AZUREVM_PERSISTENT_INSTANCE_NAME"
+    },
+    {
+      "description": "The name of resource group associated with the given persistent instance.",
+      "required": true,
+      "name": "PersistentInstanceResourceGroup",
+      "environment_variable_name": "METRIST_AZUREVM_PERSISTENT_INSTANCE_RESOURCE_GROUP"
+    },
+    {
+      "description": "A GUID that identifies a subscription and underlying services.",
+      "required": true,
+      "name": "SubscriptionID",
+      "environment_variable_name": "METRIST_AZUREVM_SUBSCRIPTION_I_D"
+    },
+    {
+      "description": "A unique identifier of the Active Directory instance.",
+      "required": true,
+      "name": "TenantID",
+      "environment_variable_name": "METRIST_AZUREVM_TENANT_I_D"
+    }
+  ]
+}

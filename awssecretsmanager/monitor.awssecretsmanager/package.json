@@ -1,0 +1,25 @@
+{
+  "name": "awssecretsmanager",
+  "version": "1.0.0",
+  "bin": "build/main.js",
+  "scripts": {
+    "build": "tsc",
+    "compile": "tsc --pretty",
+    "watch": "tsc -w",
+    "test": "echo ok"
+  },
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.303.0",
+    "@metrist/protocol": "^3.0.0",
+    "delay": "^5.0.0",
+    "moment": "^2.29.4",
+    "mysql2": "^3.1.2"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.14.0",
+    "@types/ping": "^0.4.1",
+    "typescript": "^4.9.5",
+    "typescript-language-server": "^3.3.0"
+  }
+}

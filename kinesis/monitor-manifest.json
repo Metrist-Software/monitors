@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [Amazon Kinesis](https://aws.amazon.com/kinesis/).",
+  "logical_name": "kinesis",
+  "name": "AWS Kinesis",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Nobl9.",
+  "logical_name": "nobl9",
+  "name": "Nobl9",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://nobl9.statuspage.io/"
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Tests Jira to validate that issues can be created and deleted.",
+  "logical_name": "jira",
+  "name": "Jira",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://jira-software.status.atlassian.com/"
+}

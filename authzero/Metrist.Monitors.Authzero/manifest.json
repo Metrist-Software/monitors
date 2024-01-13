@@ -1,0 +1,46 @@
+{
+  "description": "Tests Auth0 to validate that access tokens and branding can be retrieved.",
+  "has_cleanup_tasks": false,
+  "logical_name": "authzero",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Gets an access token using the API.",
+      "logical_name": "GetAccessToken",
+      "name": "Get Access Token",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://auth0.com/docs/secure/tokens/access-tokens/get-management-api-access-tokens-for-production"
+    },
+    {
+      "description": "Gets branding information using the API.",
+      "logical_name": "GetBranding",
+      "name": "Get Branding",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://auth0.com/docs/api/management/v2#!/Branding/get_branding"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "authzero",
+  "config_values": [
+    {
+      "description": "The client ID to use.",
+      "required": true,
+      "name": "ClientId",
+      "environment_variable_name": "METRIST_AUTHZERO_CLIENT_ID"
+    },
+    {
+      "description": "The Client secret to use.",
+      "required": true,
+      "name": "ClientSecret",
+      "environment_variable_name": "METRIST_AUTHZERO_CLIENT_SECRET"
+    },
+    {
+      "description": "The auth0 domain to use for the API calls.",
+      "required": true,
+      "name": "Domain",
+      "environment_variable_name": "METRIST_AUTHZERO_DOMAIN"
+    }
+  ]
+}

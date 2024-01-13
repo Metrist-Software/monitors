@@ -1,0 +1,41 @@
+{
+  "description": "Tests Stripe to validate that intents can be created and confirmed and that methods can be created.",
+  "has_cleanup_tasks": false,
+  "logical_name": "stripe",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Creates a method on a test card.",
+      "logical_name": "CreateMethod",
+      "name": "Create Method",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Creates an intent a test card.",
+      "logical_name": "CreateIntent",
+      "name": "Create Intent",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Confirms an intent on a test card.",
+      "logical_name": "ConfirmIntent",
+      "name": "Confirm Intent",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "stripe",
+  "config_values": [
+    {
+      "description": "The API key to use.",
+      "required": true,
+      "name": "ApiKey",
+      "environment_variable_name": "METRIST_STRIPE_API_KEY"
+    }
+  ]
+}

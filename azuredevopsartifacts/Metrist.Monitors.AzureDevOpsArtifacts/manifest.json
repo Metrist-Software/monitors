@@ -1,0 +1,27 @@
+{
+  "description": "Monitor the observability of [Azure DevOps Artifacts](https://azure.microsoft.com/products/devops/artifacts/).",
+  "has_cleanup_tasks": true,
+  "logical_name": "azuredevopsartifacts",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attempts to retrieve package metadata from a known artifact.",
+      "logical_name": "Ping",
+      "name": "Ping",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "This step attempts to download a known artifact.",
+      "logical_name": "DownloadPackage",
+      "name": "Download Package",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "azuredevopsartifacts",
+  "config_values": []
+}

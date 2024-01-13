@@ -1,0 +1,9 @@
+{
+  "description": "Tests Avalara to validate that it is up and running.",
+  "logical_name": "avalara",
+  "name": "Avalara",
+  "groups": [
+    "api"
+  ],
+  "status_page_url": "https://status.avalara.com/"
+}

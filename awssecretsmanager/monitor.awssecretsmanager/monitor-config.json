@@ -1,0 +1,25 @@
+{
+  "name": "awssecretsmanager",
+  "description": "AWS Secrets Manager",
+  "tag": "aws",
+  "run_spec": {
+    "type": "exe"
+  },
+  "steps": [
+    {
+      "name": "CreateSecret"
+    },
+    {
+      "name": "GetSecretValue"
+    },
+    {
+      "name": "DeleteSecret"
+    }
+  ],
+  "extra_config": {
+    "Region":"@env@:${ORCHESTRATOR_REGION}",
+    "EnvironmentTag": "@env@:${ENVIRONMENT_TAG}",
+    "AwsAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awssecretsmanager/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+		"AwsSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awssecretsmanager/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key"
+  }
+}

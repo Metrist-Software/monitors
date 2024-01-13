@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the functionality of Okta",
+  "logical_name": "okta",
+  "name": "Okta",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.okta.com/"
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Tests Zooms API and the ability to join rooms.",
+  "logical_name": "zoom",
+  "name": "Zoom",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.zoom.us/"
+}

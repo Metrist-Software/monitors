@@ -1,0 +1,20 @@
+{
+  "description": "Tests Avalara to validate that it is up and running.",
+  "has_cleanup_tasks": false,
+  "logical_name": "avalara",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Calls the ping endpoint on the AvaTax v2 API.",
+      "logical_name": "Ping",
+      "name": "Ping",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Utilities/Ping/"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "avalara",
+  "config_values": []
+}

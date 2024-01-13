@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Taxjar.",
+  "logical_name": "taxjar",
+  "name": "Taxjar",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://status.taxjar.com/"
+}

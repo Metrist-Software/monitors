@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/).",
+  "logical_name": "awseks",
+  "name": "AWS EKS",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

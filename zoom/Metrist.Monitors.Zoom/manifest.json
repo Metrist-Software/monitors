@@ -1,0 +1,60 @@
+{
+  "description": "Tests Zoom API.",
+  "has_cleanup_tasks": true,
+  "logical_name": "zoom",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Gets users using the REST API.",
+      "logical_name": "GetUsers",
+      "name": "Get Users",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://marketplace.zoom.us/docs/api-reference/zoom-api/methods#operation/users"
+    },
+    {
+      "description": "Create a meeting.",
+      "logical_name": "CreateMeeting",
+      "name": "Create Meeting",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://marketplace.zoom.us/docs/api-reference/zoom-api/methods/#operation/meetingCreate"
+    },
+    {
+      "description": "Gets meeting details.",
+      "logical_name": "GetMeeting",
+      "name": "Get Meeting",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://marketplace.zoom.us/docs/api-reference/zoom-api/methods/#operation/meeting"
+    },
+    {
+      "description": "Deletes a meeting.",
+      "logical_name": "DeleteMeeting",
+      "name": "Delete Meeting",
+      "default_timeout_seconds": 900,
+      "docs_url": "https://marketplace.zoom.us/docs/api-reference/zoom-api/methods/#operation/meetingDelete"
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "zoom",
+  "config_values": [
+    {
+      "description": "The API key to use.",
+      "required": true,
+      "name": "ApiKey",
+      "environment_variable_name": "METRIST_ZOOM_API_KEY"
+    },
+    {
+      "description": "The API secret to use.",
+      "required": true,
+      "name": "ApiSecret",
+      "environment_variable_name": "METRIST_ZOOM_API_SECRET"
+    },
+    {
+      "description": "The user ID of the user for the meeting. Required if CreateMeeting is enabled.",
+      "required": true,
+      "name": "MeetingUserId",
+      "environment_variable_name": "METRIST_ZOOM_MEETING_USER_ID"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Tests NuGet to validate that packages can be downloaded and have their versions listed.",
+  "has_cleanup_tasks": false,
+  "logical_name": "nuget",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "Lists versions of a package.",
+      "logical_name": "ListVersions",
+      "name": "List Versions",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    },
+    {
+      "description": "Downloads a package.",
+      "logical_name": "Download",
+      "name": "Download",
+      "default_timeout_seconds": 900,
+      "docs_url": ""
+    }
+  ],
+  "version": "0.1.0-beta",
+  "package_name": "nuget",
+  "config_values": []
+}

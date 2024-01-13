@@ -1,0 +1,9 @@
+{
+  "description": "Tests the GCP Cloud Storage service to validate that buckets can be created and deleted and that items can be uploaded, retrieved, and deleted.",
+  "logical_name": "gcpcloudstorage",
+  "name": "GCP Cloud Storage",
+  "groups": [
+    "gcp"
+  ],
+  "status_page_url": "https://status.cloud.google.com/"
+}

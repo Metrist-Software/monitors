@@ -1,0 +1,22 @@
+{
+  "name": "kinesis",
+  "description": "AWS Kinesis",
+  "tag": "aws",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "WriteToStream"
+    },
+    {
+      "name": "ReadFromStream"
+    }
+  ],
+  "extra_config": {
+    "AwsAccessKeyId": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/kinesis/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+		"AwsSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/kinesis/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "StreamName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/kinesis/${ORCHESTRATOR_REGION}/secrets#stream_name",
+    "Region":"@env@:${ORCHESTRATOR_REGION}"
+  }
+}

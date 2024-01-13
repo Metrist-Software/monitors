@@ -1,0 +1,21 @@
+{
+  "name": "@metrist/protocol",
+  "version": "3.0.0",
+  "description": "Protocol implementation for Metrist synthetic monitors written in NodeJS",
+  "author": "Metrist Software, Inc.",
+  "license": "Apache-2.0",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "prepare": "tsc"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.3",
+    "@types/node": "^18.14.0",
+    "jest": "^29.4.3",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5"
+  }
+}

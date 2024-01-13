@@ -1,0 +1,25 @@
+{
+  "name": "awseks",
+  "description": "AWS EKS",
+  "tag": "aws",
+  "run_spec": {
+    "type": "dll"
+  },
+  "steps": [
+    {
+      "name": "CreateDeployment"
+    },
+    {
+      "name": "RemoveDeployment"
+    }
+  ],
+  "extra_config": {
+    "EnvironmentTag": "@env@:${ORCHESTRATOR_REGION}",
+    "AWSRegion":"@env@:${ORCHESTRATOR_REGION}",
+    "AWSAccessKeyID": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awseks/${ORCHESTRATOR_REGION}/secrets#aws_access_key_id",
+		"AWSSecretAccessKey": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awseks/${ORCHESTRATOR_REGION}/secrets#aws_secret_access_key",
+    "ClusterName": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awseks/${ORCHESTRATOR_REGION}/secrets#aws_eks_cluster_name",
+    "ClusterServerAddress": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awseks/${ORCHESTRATOR_REGION}/secrets#aws_eks_cluster_server_address",
+    "ClusterCertificateAuthorityData": "@secret@:@env@:/${ENVIRONMENT_TAG}/monitors/awseks/${ORCHESTRATOR_REGION}/secrets#aws_eks_cluster_certificate_authority_data"
+  }
+}

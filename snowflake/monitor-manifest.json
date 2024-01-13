@@ -1,0 +1,8 @@
+{
+  "description": "Tests Snowflake to validate that databases, tables, and data can be created and deleted.",
+  "logical_name": "snowflake",
+  "name": "Snowflake",
+  "groups": [
+    "infrastructure"
+  ]
+}

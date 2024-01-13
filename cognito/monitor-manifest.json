@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the observability of the [AWS Cognito Identity Provider](https://aws.amazon.com/cognito/).",
+  "logical_name": "cognito",
+  "name": "AWS Cognito",
+  "groups": [
+    "aws"
+  ],
+  "status_page_url": "https://health.aws.amazon.com/health/status"
+}

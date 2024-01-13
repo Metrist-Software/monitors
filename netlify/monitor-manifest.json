@@ -1,0 +1,9 @@
+{
+  "description": "Monitor the status page for Netlify.",
+  "logical_name": "netlify",
+  "name": "Netlify",
+  "groups": [
+    "saas"
+  ],
+  "status_page_url": "https://www.netlifystatus.com/"
+}
